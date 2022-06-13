@@ -36,7 +36,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[Text('Eatiplaner is running!')],
+          children: const <Widget>[
+            Text('Eatiplaner is running!'),
+            Text('Update this text to see if the app is running!')
+          ],
         ),
       ),
     );
