@@ -1,3 +1,4 @@
+import 'package:eatiplan_mobile/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,30 +16,36 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Eatiplaner'),
+      home: const SplashScreen(title: 'Eatiplaner'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<SplashScreen> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
+    Future.delayed(const Duration(milliseconds: 2000), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
+      );
+    });
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const <Widget>[
             Text('Eatiplaner is running!'),
-            Text('Update this text to see if the app is running!')
+            Text('This is a splash screen of it')
           ],
         ),
       ),
