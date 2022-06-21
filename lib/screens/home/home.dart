@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: null,
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Align(
