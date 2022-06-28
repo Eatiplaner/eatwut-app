@@ -1,7 +1,7 @@
 import 'package:eatiplan_mobile/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future main() async {
   runApp(const MyApp());
 }
 
