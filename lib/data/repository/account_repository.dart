@@ -2,12 +2,12 @@ import 'dart:convert';
 import 'dart:convert' as convert;
 
 import 'package:eatiplan_mobile/data/model/account_model.dart';
-import 'package:eatiplan_mobile/utils/handleRequest.dart';
+import 'package:eatiplan_mobile/utils/handle_request.dart';
 import './constants.dart' as constants;
 
 class AccountRepository {
   Future<AccountModel> login(AccountModel accountModel) async {
-    const String apiUrl = constants.baseUrl + '/login';
+    const String apiUrl = '${constants.baseUrl}/login';
     final body = json.encode({
       'user_name': accountModel.userName,
       'password': accountModel.password
@@ -20,7 +20,7 @@ class AccountRepository {
   }
 
   Future<AccountModel> signup(AccountModel accountModel) async {
-    const String apiUrl = constants.baseUrl + '/signup';
+    const String apiUrl = '${constants.baseUrl}/signup';
     final body = json.encode({
       'user_name': accountModel.userName,
       'password': accountModel.password
