@@ -16,19 +16,28 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double deviceHeight(BuildContext context) =>
+        MediaQuery.of(context).size.height;
+    double deviceWidth(BuildContext context) =>
+        MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login screen'),
       ),
       body: Container(
-        padding: const EdgeInsets.fromLTRB(60, 60, 60, 40),
+        padding: EdgeInsets.fromLTRB(
+            deviceWidth(context) * 0.1,
+            deviceHeight(context) * 0.1,
+            deviceWidth(context) * 0.1,
+            deviceHeight(context) * 0.1),
         constraints: const BoxConstraints.expand(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(bottom: 40),
+              padding: EdgeInsets.only(bottom: deviceHeight(context) * 0.03),
               child: Align(
                 alignment: Alignment.center,
                 child: Container(
@@ -44,7 +53,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 20),
+              padding: EdgeInsets.only(bottom: deviceHeight(context) * 0.02),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size.zero,
@@ -59,9 +68,9 @@ class LoginScreen extends StatelessWidget {
                 child: Image.asset("assets/images/arrow_left.png"),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 20),
-              child: Text(
+            Padding(
+              padding: EdgeInsets.only(bottom: deviceHeight(context) * 0.02),
+              child: const Text(
                 "Welcome back !",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -70,9 +79,9 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 40),
-              child: TextField(
+            Padding(
+              padding: EdgeInsets.only(bottom: deviceHeight(context) * 0.03),
+              child: const TextField(
                 style: TextStyle(fontSize: 18, color: Colors.black),
                 decoration: InputDecoration(
                   labelText: "Username",
@@ -84,7 +93,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 20),
+              padding: EdgeInsets.only(bottom: deviceHeight(context) * 0.03),
               child: Stack(
                 alignment: AlignmentDirectional.centerEnd,
                 children: const <Widget>[
@@ -110,9 +119,9 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 40.0),
-              child: Text("Forgot password?"),
+            Padding(
+              padding: EdgeInsets.only(bottom: deviceHeight(context) * 0.03),
+              child: const Text("Forgot password?"),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
