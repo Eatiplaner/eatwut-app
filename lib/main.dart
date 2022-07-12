@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:eatiplan_mobile/mix-components/sample/main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,15 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text('Eatiplaner is running!'),
-            Text('Update this text to see if the app is running!')
-          ],
-        ),
-      ),
-    );
+        body: Center(
+      child: const Sample(background: Colors.blue),
+    ));
   }
 }
