@@ -1,5 +1,5 @@
+import 'package:eatiplan_mobile/mix-components/storybook/main.dart';
 import 'package:flutter/material.dart';
-import 'package:eatiplan_mobile/mix-components/sample/main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-      child: const Sample(background: Colors.blue),
+      child: StoryBook(),
     ));
   }
 }

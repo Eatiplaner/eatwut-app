@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
 
-Mix style({background}) {
+Mix style({background = Colors.green}) {
   return Mix(
     height(150),
     width(150),
