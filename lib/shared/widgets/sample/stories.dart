@@ -1,9 +1,9 @@
-import 'package:eatiplan_mobile/mix-components/sample/main.dart';
+import 'package:eatiplan_mobile/shared/widgets/sample/main.dart';
 import 'package:flutter/material.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 Story get sampleStory => Story(
-    name: 'Mix/Sample',
+    name: 'Sample/Draft',
     description: 'Sample Mix Component',
     builder: (context) => Sample(background: getBackground(context)));
 
