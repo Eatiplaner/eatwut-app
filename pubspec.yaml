@@ -37,6 +37,7 @@ dependencies:
   mix: ^0.0.6
   storybook_flutter: ^0.11.1
   provider: ^6.0.3
+  flutter_form_builder: ^7.4.0
 
 dev_dependencies:
   flutter_test:
