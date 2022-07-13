@@ -1,5 +1,5 @@
 import 'package:eatiplan_mobile/config/theme.dart';
-import 'package:eatiplan_mobile/mix-components/storybook/main.dart';
+import 'package:eatiplan_mobile/shared/storybook/main.dart';
 import 'package:eatiplan_mobile/provider/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
