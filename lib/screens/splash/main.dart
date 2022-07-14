@@ -13,6 +13,7 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text('welcome'.trParams({'username': 'Jonny'})),
                 MaterialButton(
                   color: Colors.green,
                   onPressed: () => Get.toNamed('/storybook'),

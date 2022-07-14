@@ -1,5 +1,6 @@
 import 'package:eatiplan_mobile/config/routes.dart';
 import 'package:eatiplan_mobile/config/theme.dart';
+import 'package:eatiplan_mobile/i18n/main.dart';
 import 'package:eatiplan_mobile/provider/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
@@ -23,14 +24,15 @@ class MyApp extends StatelessWidget {
       ],
       child: Consumer<ThemeProvider>(
         builder: (ctx, themeObject, _) => GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Eatiplaner App',
-          themeMode: themeObject.mode,
-          theme: lightTheme,
-          darkTheme: darkTheme,
-          initialRoute: '/', // TODO: implement splash screen
-          getPages: appRoutes(),
-        ),
+            debugShowCheckedModeBanner: false,
+            title: 'Eatiplaner App',
+            themeMode: themeObject.mode,
+            theme: lightTheme,
+            darkTheme: darkTheme,
+            initialRoute: '/',
+            getPages: appRoutes(),
+            translations: Messages(),
+            locale: const Locale('vi', 'en')),
       ),
     );
   }
