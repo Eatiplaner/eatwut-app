@@ -1,4 +1,5 @@
 import 'package:eatiplan_mobile/screens/auth/login/main.dart';
+import 'package:eatiplan_mobile/screens/auth/main.dart';
 import 'package:eatiplan_mobile/screens/auth/register/main.dart';
 import 'package:eatiplan_mobile/screens/splash/main.dart';
 import 'package:eatiplan_mobile/shared/storybook/main.dart';
@@ -19,10 +20,17 @@ appRoutes() => [
         transitionDuration: const Duration(milliseconds: 300),
       ),
       GetPage(
+        name: '/auth',
+        page: () => const AuthScreen(),
+        middlewares: [TrackingMiddelware()],
+        transition: Transition.upToDown,
+        transitionDuration: const Duration(milliseconds: 300),
+      ),
+      GetPage(
         name: '/login',
         page: () => const LoginScreen(),
         middlewares: [TrackingMiddelware()],
-        transition: Transition.rightToLeftWithFade,
+        transition: Transition.cupertinoDialog,
         transitionDuration: const Duration(milliseconds: 300),
       ),
       GetPage(
