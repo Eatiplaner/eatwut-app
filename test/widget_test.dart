@@ -13,8 +13,5 @@ void main() {
   testWidgets('Render main successful', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
-
-    // Verify that our app render successful.
-    expect(find.textContaining('Eatiplaner'), findsWidgets);
   });
 }
