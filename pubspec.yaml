@@ -39,6 +39,9 @@ dependencies:
   provider: ^6.0.3
   flutter_form_builder: ^7.4.0
   get: ^4.6.5
+  protobuf: ^2.1.0
+  grpc: ^3.0.2
+  protoc_plugin: ^20.0.1
 
 dev_dependencies:
   flutter_test:
