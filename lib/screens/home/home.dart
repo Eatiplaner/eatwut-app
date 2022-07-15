@@ -1,5 +1,5 @@
-import 'package:eatiplan_mobile/screens/auth/login/index.dart';
-import 'package:eatiplan_mobile/screens/auth/register/index.dart';
+import 'package:eatiplan_mobile/screens/auth/login/main.dart';
+import 'package:eatiplan_mobile/screens/auth/register/main.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
