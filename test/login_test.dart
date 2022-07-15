@@ -6,18 +6,11 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:eatiplan_mobile/screens/auth/login/login.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  Widget createWidgetForTesting({required Widget child}) {
-    return MaterialApp(
-      home: child,
-    );
-  }
-
   testWidgets('Render main successful', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const LoginScreen());
   });
 }
