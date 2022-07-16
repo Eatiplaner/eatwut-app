@@ -1,17 +1,9 @@
-import 'package:eatiplan_mobile/data/model/account_model.dart';
-import 'package:eatiplan_mobile/data/repository/account_repository.dart';
 import 'package:eatiplan_mobile/shared/widgets/button/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
-
-  doLogin() {
-    Future<AccountModel> response = AccountRepository().login(
-        AccountModel(email: 'eatiplaner6@gmail.com', password: 'Aa@123456'));
-    print(response);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +26,7 @@ class AuthScreen extends StatelessWidget {
             Expanded(
               flex: 1,
               child: Column(children: [
-                Button(
+                EButton(
                   label: 'login.title'.tr,
                   variant: ButtonVariant.primary,
                   onPressed: () {
@@ -42,7 +34,7 @@ class AuthScreen extends StatelessWidget {
                   },
                 ),
                 const SizedBox(height: 20),
-                Button(
+                EButton(
                   label: 'signup.title'.tr,
                   variant: ButtonVariant.secondary,
                   onPressed: () {},

@@ -1,3 +1,4 @@
+import 'package:eatiplan_mobile/shared/widgets/button/main.dart';
 import 'package:eatiplan_mobile/shared/widgets/buttons/mode_toggle_button/stories.dart';
 import 'package:eatiplan_mobile/shared/widgets/forms/input/stories.dart';
 import 'package:eatiplan_mobile/shared/widgets/sample/stories.dart';
@@ -9,6 +10,11 @@ class StoryBook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Storybook(
-        stories: [sampleStory, modeToggleButtonStory, formInputStory],
+        stories: [
+          sampleStory,
+          modeToggleButtonStory,
+          formInputStory,
+          buttonStory
+        ],
       );
 }
