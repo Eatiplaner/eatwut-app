@@ -2,8 +2,8 @@ version: v1.0
 name: Pipeline 2
 agent:
   machine:
-    type: e1-standard-2
-    os_image: ubuntu2004
+    type: a1-standard-4
+    os_image: macos-xcode13
 blocks:
   - name: Install dependencies
     task:
@@ -26,5 +26,3 @@ blocks:
             - bundle install
             - cache store
             - bundle exec fastlane deploy
-      secrets:
-        - name: flutter-env
