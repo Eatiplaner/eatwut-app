@@ -36,4 +36,4 @@ promotions:
   - name: Deploy to TestFlight
     pipeline_file: pipeline_2.yml
     auto_promote:
-      when: tag =~ 'v*.*.*-staging' AND result = 'passed'
+      when: branch =~ '^release/' AND  tag =~ 'v*.*.*-staging' AND result = 'passed'
