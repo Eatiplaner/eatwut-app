@@ -1,0 +1,28 @@
+version: v1.0
+name: Pipeline 2
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Install dependencies
+    task:
+      jobs:
+        - name: Install dependencies
+          commands:
+            - checkout
+            - cache restore flutter-packages
+            - flutter pub get
+            - cache store flutter-packages .packages
+  - name: Deploy to TestFlight
+    task:
+      jobs:
+        - name: Run fastlane deploy
+          commands:
+            - checkout
+            - cache restore flutter-packages .packages
+            - flutter build ios --no-codesign
+            - cd ios
+            - bundle install
+            - cache store
+            - bundle exec fastlane deploy
