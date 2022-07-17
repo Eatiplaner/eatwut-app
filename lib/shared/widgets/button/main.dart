@@ -1,3 +1,4 @@
+import 'package:eatiplan_mobile/shared/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
@@ -23,25 +24,24 @@ class EButton extends StatelessWidget {
             minWidth: double.infinity,
             shape: RoundedRectangleBorder(
               side: BorderSide(
-                color: isPrimary
-                    ? const Color(0xffFFFFFF)
-                    : const Color(0xff1A2019),
+                color: isPrimary ? Colors.white : primaryColor,
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(10), // <-- Radius
             ),
             child: MaterialButton(
               onPressed: onPressed,
-              color:
-                  isPrimary ? const Color(0xff1A2019) : const Color(0xffFFFFFF),
-              textColor:
-                  isPrimary ? const Color(0xffFFFFFF) : const Color(0xff1A2019),
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              enableFeedback: false,
+              color: isPrimary ? primaryColor : Colors.white,
+              textColor: isPrimary ? Colors.white : primaryColor,
               height: 56,
               child: Text(
                 label,
                 style: const TextStyle(
                     fontSize: 15,
-                    fontFamily: 'Montserrat',
+                    fontFamily: fontFamily,
                     fontWeight: FontWeight.w700),
               ),
             )));

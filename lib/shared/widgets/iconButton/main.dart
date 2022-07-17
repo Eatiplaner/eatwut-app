@@ -1,3 +1,4 @@
+import 'package:eatiplan_mobile/shared/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
@@ -28,7 +29,7 @@ class EIconButton extends StatelessWidget {
           minWidth: double.infinity,
           shape: RoundedRectangleBorder(
             side: const BorderSide(
-              color: Color(0xff1A2019),
+              color: primaryColor,
               width: 1,
             ),
             borderRadius: BorderRadius.circular(10), // <-- Radius

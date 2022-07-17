@@ -1,3 +1,4 @@
+import 'package:eatiplan_mobile/shared/variables.dart';
 import 'package:eatiplan_mobile/shared/widgets/button/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,7 +19,7 @@ class AuthScreen extends StatelessWidget {
                 child: Text('Logo',
                     style: TextStyle(
                       fontSize: 64,
-                      fontFamily: "Montserrat",
+                      fontFamily: fontFamily,
                       fontWeight: FontWeight.w700,
                     )),
               ),
@@ -45,7 +46,7 @@ class AuthScreen extends StatelessWidget {
                     child: Text('login.guest'.tr,
                         style: const TextStyle(
                             fontSize: 14,
-                            color: Color(0xff1A2019),
+                            color: primaryColor,
                             fontWeight: FontWeight.w500)))
               ]),
             ),
@@ -57,22 +58,21 @@ class AuthScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     RichText(
-                      text: const TextSpan(
-                        style: TextStyle(
+                      text: TextSpan(
+                        style: const TextStyle(
                           fontSize: 14.0,
                           color: Colors.black,
                         ),
                         children: <TextSpan>[
+                          TextSpan(text: 'auth.bottom.text.1'.tr),
                           TextSpan(
-                              text:
-                                  'By logging in or registering, you agree to our '),
+                              text: 'auth.bottom.text.2'.tr,
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold)),
+                          TextSpan(text: 'auth.bottom.text.3'.tr),
                           TextSpan(
-                              text: 'Terms of Use',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          TextSpan(text: ' and '),
-                          TextSpan(
-                            text: 'Privacy policy',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            text: 'auth.bottom.text.4'.tr,
+                            style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),

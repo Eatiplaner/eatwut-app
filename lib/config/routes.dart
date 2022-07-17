@@ -23,14 +23,14 @@ appRoutes() => [
         name: '/auth',
         page: () => const AuthScreen(),
         middlewares: [TrackingMiddelware()],
-        transition: Transition.upToDown,
+        transition: Transition.native,
         transitionDuration: const Duration(milliseconds: 300),
       ),
       GetPage(
         name: '/login',
         page: () => const LoginScreen(),
         middlewares: [TrackingMiddelware()],
-        transition: Transition.cupertinoDialog,
+        transition: Transition.native,
         transitionDuration: const Duration(milliseconds: 300),
       ),
       GetPage(
