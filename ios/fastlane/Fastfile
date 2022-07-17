@@ -1,0 +1,96 @@
+git_authorization = ENV["MATCH_GIT_AUTHORIZATION"]
+team_id = ENV["TEAM_ID"]
+app_id = ENV["APP_ID"]
+app_identifier = ENV["APP_IDENTIFIER"]
+provisioning_profile_specifier = ENV["PROVISIONING_PROFILES_SPECIFIER"]
+temp_keychain_user = "temp"
+temp_keychain_password = "temp"
+
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+# This is where the environment variables are located
+
+(truncated)
+
+# Add the following
+
+def delete_temp_keychain(name)
+  delete_keychain(
+    name: name
+  ) if File.exist? File.expand_path("~/Library/Keychains/#{name}-db")
+end
+
+def create_temp_keychain(name, password)
+  create_keychain(
+    name: name,
+    password: password,
+    unlock: false,
+    timeout: 0
+  )
+end
+
+def ensure_temp_keychain(name, password)
+  delete_temp_keychain(name)
+  create_temp_keychain(name, password)
+end
+
+default_platform(:ios)
+
+platform :ios do
+  lane :deploy do
+    # Step 1 - Create keychains
+    keychain_name = temp_keychain_user
+    keychain_password = temp_keychain_password
+    ensure_temp_keychain(keychain_name, keychain_password)
+
+    # Step 2 - Download provisioning profiles and certificates
+    match(
+      type: 'appstore',
+      app_identifier: app_identifier,
+      git_basic_authorization:  Base64.strict_encode64(git_authorization),
+      readonly: true,
+      keychain_name: keychain_name,
+      keychain_password: keychain_password 
+    )
+
+    # Step 3 - Build the project
+    gym(
+      configuration: "Release",
+      workspace: "Runner.xcworkspace",
+      scheme: "Runner",
+      export_method: "app-store",
+      export_options: {
+        provisioningProfiles: { 
+            app_id => provisioning_profile_specifier,
+        }
+      }
+    )
+
+    # Step 4 - Upload the project
+    pilot(
+      apple_id: "#{app_id}",
+      app_identifier: "#{app_identifier}",
+      skip_waiting_for_build_processing: true,
+      skip_submission: true,
+      distribute_external: false,
+      notify_external_testers: false,
+      ipa: "./Runner.ipa"
+    )
+
+    # Step 5 - Delete temporary keychains
+    delete_temp_keychain(keychain_name)
+  end
+end
