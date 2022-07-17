@@ -1,21 +1,17 @@
-import 'package:eatiplan_mobile/data/model/account_model.dart';
-import 'package:eatiplan_mobile/data/repository/account_repository.dart';
 import 'package:eatiplan_mobile/shared/variables.dart';
 import 'package:eatiplan_mobile/shared/widgets/button/main.dart';
 import 'package:eatiplan_mobile/shared/widgets/iconButton/main.dart';
 import 'package:eatiplan_mobile/shared/widgets/textfield/textfield/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/route_manager.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
-  doLogin() {
-    Future<AccountModel> response = AccountRepository().login(
-        AccountModel(email: 'eatiplaner6@gmail.com', password: 'Aa@123456'));
-    print(response);
-  }
+  // doLogin() {
+  //   Future<AccountModel> response = AccountRepository().login(
+  //       AccountModel(email: 'eatiplaner6@gmail.com', password: 'Aa@123456'));
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -63,18 +59,14 @@ class LoginScreen extends StatelessWidget {
                         value: 'test',
                         icon: Icons.account_circle_outlined,
                         placeholder: 'login.username.placeholder'.tr,
-                        onChange: (value) {
-                          print(value);
-                        },
+                        onChange: (value) {},
                       ),
                       const SizedBox(height: 14),
                       ETextfield(
                         value: 'test',
                         icon: Icons.lock_outline,
                         placeholder: 'login.password.placeholder'.tr,
-                        onChange: (value) {
-                          print(value);
-                        },
+                        onChange: (value) {},
                       ),
                       const SizedBox(height: 14),
                       TextButton(
