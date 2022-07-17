@@ -11,7 +11,7 @@ blocks:
         - name: APP_ENV
           value: prod
       jobs:
-        - name: Get deps
+        - name: Get deps and store a cache
           commands:
             - checkout
             - flutter pub get
@@ -32,6 +32,29 @@ blocks:
           - cache restore flutter-packages
     dependencies:
       - Install and Cache deps
+
+  - name: Test Android
+    dependencies:
+      - Install and Cache deps
+    task:
+      prologue:
+        commands:
+          - checkout
+          - flutter pub get
+      agent:
+        machine:
+          type: e1-standard-2
+          os_image: ubuntu1804
+        containers:
+          - name: main
+            image: "registry.semaphoreci.com/android:31-flutter"
+      jobs:
+        - name: Unit Tests
+          commands:
+            - flutter test
+        - name: Code analyse
+          commands:
+            - flutter analyze
 promotions:
   - name: Deploy to TestFlight
     pipeline_file: pipeline_2.yml
