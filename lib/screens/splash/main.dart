@@ -15,14 +15,9 @@ class SplashScreen extends StatelessWidget {
               children: [
                 Text('welcome'.trParams({'username': 'Jonny'})),
                 MaterialButton(
-                  color: Colors.blue,
-                  onPressed: () => Get.toNamed('/login'),
-                  child: const Text('Login'),
-                ),
-                MaterialButton(
-                  color: Colors.deepPurple,
-                  onPressed: () => Get.toNamed('/register'),
-                  child: const Text('Signup'),
+                  color: const Color.fromARGB(255, 103, 150, 188),
+                  onPressed: () => Get.toNamed('/auth'),
+                  child: const Text('Auth screen'),
                 ),
                 MaterialButton(
                   color: Colors.green,

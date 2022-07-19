@@ -8,10 +8,15 @@ import './constants.dart' as constants;
 class AccountRepository {
   Future<AccountModel> login(AccountModel accountModel) async {
     const String apiUrl = '${constants.baseUrl}/login';
-    final body = json.encode({
-      'user_name': accountModel.userName,
-      'password': accountModel.password
-    });
+    var body = "";
+    if (accountModel.userName != "") {
+      body = json.encode({
+        'user_name': accountModel.userName,
+        'password': accountModel.password
+      });
+    }
+    body = json.encode(
+        {'email': accountModel.email, 'password': accountModel.password});
 
     final response = await API(apiUrl: apiUrl).post(body);
     final responseAccountData =
