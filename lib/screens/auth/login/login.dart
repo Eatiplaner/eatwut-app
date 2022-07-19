@@ -3,7 +3,7 @@ import 'package:eatiplan_mobile/data/repository/account_repository.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({Key? key}) : super(key: key);
 
   doLogin() {
     AccountRepository()

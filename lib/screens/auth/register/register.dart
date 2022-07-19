@@ -3,7 +3,8 @@ import 'package:eatiplan_mobile/data/repository/account_repository.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
+  const RegisterScreen({Key? key}) : super(key: key);
+
   doSignup() {
     AccountRepository()
         .signup(AccountModel(userName: 'louishuy', password: '123456'));
