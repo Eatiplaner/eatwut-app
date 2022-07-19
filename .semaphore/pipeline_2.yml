@@ -26,3 +26,5 @@ blocks:
             - bundle install
             - cache store
             - bundle exec fastlane deploy
+      secrets:
+        - name: flutter-env
