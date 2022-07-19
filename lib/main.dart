@@ -7,7 +7,7 @@ import 'package:get/route_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get.dart';
 
-void main() {
+Future main() async {
   runApp(const MyApp());
 }
 
