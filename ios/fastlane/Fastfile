@@ -80,6 +80,7 @@ platform :ios do
     previous_build_number = latest_testflight_build_number(
       app_identifier: app_identifier,
       api_key: api_key,
+      version: get_version_number
     )
 
     current_build_number = previous_build_number + 1
