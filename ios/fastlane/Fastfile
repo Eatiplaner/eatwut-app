@@ -1,11 +1,3 @@
-git_authorization = ENV["MATCH_GIT_AUTHORIZATION"]
-team_id = ENV["TEAM_ID"]
-app_id = ENV["APP_ID"]
-app_identifier = ENV["APP_IDENTIFIER"]
-provisioning_profile_specifier = ENV["PROVISIONING_PROFILES_SPECIFIER"]
-temp_keychain_user = "temp"
-temp_keychain_password = "temp"
-
 # This file contains the fastlane.tools configuration
 # You can find the documentation at https://docs.fastlane.tools
 #
@@ -23,7 +15,13 @@ temp_keychain_password = "temp"
 
 # This is where the environment variables are located
 
-(truncated)
+git_authorization = ENV["MATCH_GIT_AUTHORIZATION"]
+team_id = ENV["TEAM_ID"]
+app_id = ENV["APP_ID"]
+app_identifier = ENV["APP_IDENTIFIER"]
+provisioning_profile_specifier = ENV["PROVISIONING_PROFILES_SPECIFIER"]
+temp_keychain_user = "temp"
+temp_keychain_password = "temp"
 
 # Add the following
 
