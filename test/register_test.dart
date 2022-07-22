@@ -12,7 +12,9 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('Render register successful', (WidgetTester tester) async {
     await tester
-        .pumpWidget(createWidgetForTesting(child: const RegisterScreen()));
+        .pumpWidget(createWidgetForTesting(child: RegisterScreen()));
+
+    // Verify that our app render successful.
     expect(find.textContaining('Register'), findsWidgets);
   });
 }

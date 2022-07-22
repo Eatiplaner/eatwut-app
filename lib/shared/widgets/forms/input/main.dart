@@ -1,14 +1,29 @@
+import 'package:eatiplan_mobile/shared/variables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
-class FormInput extends StatelessWidget {
-  const FormInput(
-      {Key? key,
-      this.validator,
-      required this.name,
-      this.validateMode = AutovalidateMode.always})
-      : super(key: key);
+import '../../textfield/textfield/main.dart';
 
+class FormInput extends StatelessWidget {
+  const FormInput({
+    Key? key,
+    this.placeholder = "",
+    this.icon,
+    this.value = "",
+    this.onChange,
+    this.isError = false,
+    this.label,
+    this.validator,
+    required this.name,
+    this.validateMode = AutovalidateMode.always,
+  }) : super(key: key);
+
+  final String placeholder;
+  final IconData? icon;
+  final String value;
+  final ValueChanged<String>? onChange;
+  final String? label;
+  final bool isError;
   final String? Function(dynamic valueCandidate)? validator;
   final String name;
   final AutovalidateMode? validateMode;
@@ -21,8 +36,27 @@ class FormInput extends StatelessWidget {
       builder: (FormFieldState field) {
         return CupertinoFormRow(
           error: field.errorText != null ? Text(field.errorText!) : null,
-          child: CupertinoTextField(
-            onChanged: (value) => field.didChange(value),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 10.0),
+                child: Text(
+                  label!,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    color: primaryColor,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              ETextfield(
+                icon: icon,
+                isError: isError,
+                placeholder: placeholder,
+                onChange: onChange,
+              ),
+            ],
           ),
         );
       },

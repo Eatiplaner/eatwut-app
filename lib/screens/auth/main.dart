@@ -38,7 +38,9 @@ class AuthScreen extends StatelessWidget {
                 EButton(
                   label: 'signup.title'.tr,
                   variant: ButtonVariant.secondary,
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/register');
+                  },
                 ),
                 const SizedBox(height: 20),
                 TextButton(
