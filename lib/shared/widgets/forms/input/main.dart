@@ -24,7 +24,7 @@ class FormInput extends StatelessWidget {
   final ValueChanged<String>? onChange;
   final String? label;
   final bool isError;
-  final String? Function(dynamic valueCandidate)? validator;
+  final String validator;
   final String name;
   final AutovalidateMode? validateMode;
 
@@ -60,8 +60,8 @@ class FormInput extends StatelessWidget {
           ),
         );
       },
+      validator: ,
       autovalidateMode: AutovalidateMode.always,
-      validator: validator,
     );
   }
 }

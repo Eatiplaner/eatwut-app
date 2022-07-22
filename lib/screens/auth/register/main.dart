@@ -3,6 +3,7 @@ import 'package:eatiplan_mobile/data/repository/account_repository.dart';
 import 'package:eatiplan_mobile/shared/widgets/forms/input/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_validator/form_validator.dart';
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
@@ -31,6 +32,7 @@ class RegisterScreen extends StatelessWidget {
                   label: "What’s your email?",
                   icon: Icons.account_circle_outlined,
                   placeholder: "Your email",
+                  validator: ValidationBuilder().minLength(10).build(),
                 )
               ],
             ),
