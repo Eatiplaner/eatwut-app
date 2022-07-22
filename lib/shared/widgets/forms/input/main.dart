@@ -13,7 +13,7 @@ class FormInput extends StatelessWidget {
     this.onChange,
     this.isError = false,
     this.label,
-    this.validator,
+    required this.validator,
     required this.name,
     this.validateMode = AutovalidateMode.always,
   }) : super(key: key);
@@ -24,7 +24,7 @@ class FormInput extends StatelessWidget {
   final ValueChanged<String>? onChange;
   final String? label;
   final bool isError;
-  final String validator;
+  final String? Function(String?) validator;
   final String name;
   final AutovalidateMode? validateMode;
 
@@ -54,14 +54,19 @@ class FormInput extends StatelessWidget {
                 icon: icon,
                 isError: isError,
                 placeholder: placeholder,
-                onChange: onChange,
+                onChange: (String? text) {
+                  field.didChange(text);
+                  if (onChange != null) {
+                    onChange!(text!);
+                  }
+                },
               ),
             ],
           ),
         );
       },
-      validator: ,
-      autovalidateMode: AutovalidateMode.always,
+      validator: validator,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
     );
   }
 }

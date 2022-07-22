@@ -26,7 +26,7 @@ class RegisterScreen extends StatelessWidget {
           FormBuilder(
             key: _formKey,
             child: Column(
-              children: const <Widget>[
+              children: <Widget>[
                 FormInput(
                   name: "usename",
                   label: "What’s your email?",
