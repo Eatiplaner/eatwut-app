@@ -35,7 +35,7 @@ appRoutes() => [
       ),
       GetPage(
         name: '/register',
-        page: () => const RegisterScreen(),
+        page: () => RegisterScreen(),
         middlewares: [TrackingMiddelware()],
         transition: Transition.rightToLeftWithFade,
         transitionDuration: const Duration(milliseconds: 300),
