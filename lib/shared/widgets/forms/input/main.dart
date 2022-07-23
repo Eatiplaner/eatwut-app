@@ -35,7 +35,18 @@ class FormInput extends StatelessWidget {
       onChanged: (val) => debugPrint(val.toString()),
       builder: (FormFieldState field) {
         return CupertinoFormRow(
-          error: field.errorText != null ? Text(field.errorText!) : null,
+          error: field.errorText != null
+              ? Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    field.errorText!,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: errorColor,
+                    ),
+                  ),
+                )
+              : null,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
