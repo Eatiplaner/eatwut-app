@@ -25,7 +25,7 @@ class AuthScreen extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 1,
+              flex: 2,
               child: Column(children: [
                 EButton(
                   label: 'login.title'.tr,
@@ -38,7 +38,9 @@ class AuthScreen extends StatelessWidget {
                 EButton(
                   label: 'signup.title'.tr,
                   variant: ButtonVariant.secondary,
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/register');
+                  },
                 ),
                 const SizedBox(height: 20),
                 TextButton(
@@ -50,7 +52,7 @@ class AuthScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500)))
               ]),
             ),
-            Expanded(
+            Flexible(
                 flex: 1,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
