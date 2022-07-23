@@ -2,7 +2,7 @@ import 'package:eatiplan_mobile/shared/variables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
-import '../../textfield/textfield/main.dart';
+import '../../textfield/main.dart';
 
 class FormInput extends StatelessWidget {
   const FormInput({
