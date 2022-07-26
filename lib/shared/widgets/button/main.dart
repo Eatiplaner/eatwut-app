@@ -2,19 +2,21 @@ import 'package:eatiplan_mobile/shared/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
-enum ButtonVariant { primary, secondary }
+enum ButtonVariant { primary, secondary, danger }
 
 class EButton extends StatelessWidget {
   const EButton(
       {Key? key,
       required this.label,
       required this.variant,
+      this.disabled = false,
       required this.onPressed})
       : super(key: key);
 
   final String label;
   final ButtonVariant variant;
   final VoidCallback? onPressed;
+  final bool disabled;
   @override
   Widget build(BuildContext context) {
     bool isPrimary = variant == ButtonVariant.primary;
@@ -30,7 +32,8 @@ class EButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(10), // <-- Radius
             ),
             child: MaterialButton(
-              onPressed: onPressed,
+              onPressed: disabled ? null : onPressed,
+              disabledColor: Colors.black26,
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
               enableFeedback: false,

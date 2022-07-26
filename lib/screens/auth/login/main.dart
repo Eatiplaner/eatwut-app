@@ -1,17 +1,90 @@
+import 'package:eatiplan_mobile/data/model/account_model.dart';
+import 'package:eatiplan_mobile/data/repository/account_repository.dart';
 import 'package:eatiplan_mobile/shared/variables.dart';
 import 'package:eatiplan_mobile/shared/widgets/button/main.dart';
 import 'package:eatiplan_mobile/shared/widgets/iconButton/main.dart';
 import 'package:eatiplan_mobile/shared/widgets/textfield/main.dart';
 import 'package:flutter/material.dart';
+import 'package:ftoast/ftoast.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
-  // doLogin() {
-  //   Future<AccountModel> response = AccountRepository().login(
-  //       AccountModel(email: 'eatiplaner6@gmail.com', password: 'Aa@123456'));
-  // }
+  @override
+  createState() => _LoginScreen();
+}
+
+class _LoginScreen extends State<LoginScreen> {
+  String userEmailName = "";
+  String password = "";
+  bool isUsernameError = false;
+  bool isPasswordError = false;
+  bool isLoading = false;
+
+  doLogin(context) async {
+    setState(() {
+      isLoading = true;
+    });
+    if (checkValidation() == true) {
+      bool isLogin = false;
+      if (userEmailName.contains("@")) {
+        isLogin = await AccountRepository()
+            .login(AccountModel(email: userEmailName, password: password));
+      } else {
+        isLogin = await AccountRepository()
+            .login(AccountModel(userName: userEmailName, password: password));
+      }
+
+      if (!isLogin) {
+        FToast.toast(
+          context,
+          color: Colors.redAccent,
+          padding: const EdgeInsets.all(15),
+          msg: 'Username/Email or Password incorrect',
+          msgStyle: const TextStyle(color: Colors.white),
+        );
+      } else {
+        FToast.toast(
+          context,
+          color: Colors.green,
+          padding: const EdgeInsets.all(15),
+          msg: 'Login successful',
+          msgStyle: const TextStyle(color: Colors.white),
+        );
+        Get.toNamed('/home');
+      }
+    } else {
+      FToast.toast(
+        context,
+        color: Colors.redAccent,
+        padding: const EdgeInsets.all(15),
+        msg: 'Username/Email and Password cannot be blank',
+        msgStyle: const TextStyle(color: Colors.white),
+      );
+    }
+    setState(() {
+      isLoading = false;
+    });
+  }
+
+  bool checkValidation() {
+    if (userEmailName == "" || password == "") {
+      if (userEmailName == "") {
+        setState(() {
+          isUsernameError = true;
+        });
+      }
+      if (password == "") {
+        setState(() {
+          isPasswordError = true;
+        });
+      }
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,19 +130,30 @@ class LoginScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 30),
                           ETextfield(
-                            value: 'test',
+                            value: userEmailName,
                             icon: Icons.account_circle_outlined,
                             placeholder: 'login.username.placeholder'.tr,
-                            onChange: (value) {},
+                            isError: isUsernameError,
+                            onChange: (value) {
+                              setState(() {
+                                isUsernameError = !value.isNotEmpty;
+                                userEmailName = value;
+                              });
+                            },
                           ),
                           const SizedBox(height: 14),
                           ETextfield(
-                            value: 'test',
-                            isError: false,
+                            value: password,
+                            isError: isPasswordError,
                             icon: Icons.lock_outline,
                             isSecret: true,
                             placeholder: 'login.password.placeholder'.tr,
-                            onChange: (value) {},
+                            onChange: (value) {
+                              setState(() {
+                                isPasswordError = !value.isNotEmpty;
+                                password = value;
+                              });
+                            },
                           ),
                           const SizedBox(height: 14),
                           TextButton(
@@ -81,9 +165,12 @@ class LoginScreen extends StatelessWidget {
                                     fontWeight: FontWeight.w500)),
                           ),
                           EButton(
+                            disabled: isLoading,
                             label: 'login.continue'.tr,
                             variant: ButtonVariant.primary,
-                            onPressed: () {},
+                            onPressed: () {
+                              doLogin(context);
+                            },
                           ),
                         ])),
               ),

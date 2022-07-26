@@ -1,5 +1,6 @@
 import 'package:eatiplan_mobile/shared/variables.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 import '../../textfield/main.dart';
@@ -38,12 +39,21 @@ class FormInput extends StatelessWidget {
           error: field.errorText != null
               ? Padding(
                   padding: const EdgeInsets.only(top: 8.0),
-                  child: Text(
-                    field.errorText!,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: errorColor,
-                    ),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.warning,
+                        color: Colors.redAccent,
+                      ),
+                      const SizedBox(width: 5,),
+                      Text(
+                        field.errorText!,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: errorColor,
+                        ),
+                      )
+                    ],
                   ),
                 )
               : null,
@@ -63,7 +73,7 @@ class FormInput extends StatelessWidget {
               ),
               ETextfield(
                 icon: icon,
-                isError: isError,
+                isError: field.hasError,
                 placeholder: placeholder,
                 onChange: (String? text) {
                   field.didChange(text);
