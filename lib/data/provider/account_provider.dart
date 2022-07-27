@@ -22,9 +22,11 @@ class AccountProvider {
         'user_name': accountModel.userName,
         'password': accountModel.password
       });
+    } else {
+      body = json.encode(
+          {'email': accountModel.email, 'password': accountModel.password});
     }
-    body = json.encode(
-        {'email': accountModel.email, 'password': accountModel.password});
+
     AccountModel response = AccountModel(accessToken: "");
     await API(apiUrl: apiUrl).post(body).then((res) {
       var data = convert.jsonDecode(res.body);
