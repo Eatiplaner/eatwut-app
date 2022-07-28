@@ -228,6 +228,7 @@ class RegisterScreen extends HookWidget {
                         icon: Icons.account_circle_outlined,
                         placeholder: "signup.field.placeholder.fullName".tr,
                         validator: ValidationBuilder().build(),
+                        textInputAction: TextInputAction.done,
                       ),
                       const SizedBox(height: 24),
                       EButton(

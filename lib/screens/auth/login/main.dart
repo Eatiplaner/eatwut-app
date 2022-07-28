@@ -148,6 +148,7 @@ class _LoginScreen extends State<LoginScreen> {
                               password = value;
                             });
                           },
+                          textInputAction: TextInputAction.done,
                         ),
                         const SizedBox(height: 14),
                         TextButton(

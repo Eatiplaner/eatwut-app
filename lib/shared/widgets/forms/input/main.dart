@@ -16,6 +16,7 @@ class FormInput extends StatelessWidget {
     this.isSecrect = false,
     this.label,
     this.validator,
+    this.textInputAction = TextInputAction.next,
     required this.name,
     this.validateMode = AutovalidateMode.always,
   }) : super(key: key);
@@ -30,6 +31,7 @@ class FormInput extends StatelessWidget {
   final String? Function(String?)? validator;
   final String name;
   final AutovalidateMode? validateMode;
+  final TextInputAction textInputAction;
 
   @override
   Widget build(BuildContext context) {
@@ -81,6 +83,7 @@ class FormInput extends StatelessWidget {
                 isSecret: isSecrect,
                 isError: field.hasError || isError,
                 placeholder: placeholder,
+                textInputAction: textInputAction,
                 onChange: (String? text) {
                   field.didChange(text);
                   if (onChange != null) {
