@@ -13,8 +13,9 @@ class FormInput extends StatelessWidget {
     this.value = "",
     this.onChange,
     this.isError = false,
+    this.isSecrect = false,
     this.label,
-    required this.validator,
+    this.validator,
     required this.name,
     this.validateMode = AutovalidateMode.always,
   }) : super(key: key);
@@ -25,7 +26,8 @@ class FormInput extends StatelessWidget {
   final ValueChanged<String>? onChange;
   final String? label;
   final bool isError;
-  final String? Function(String?) validator;
+  final bool isSecrect;
+  final String? Function(String?)? validator;
   final String name;
   final AutovalidateMode? validateMode;
 
@@ -36,6 +38,7 @@ class FormInput extends StatelessWidget {
       onChanged: (val) => debugPrint(val.toString()),
       builder: (FormFieldState field) {
         return CupertinoFormRow(
+          padding: const EdgeInsets.all(0),
           error: field.errorText != null
               ? Padding(
                   padding: const EdgeInsets.only(top: 8.0),
@@ -45,7 +48,9 @@ class FormInput extends StatelessWidget {
                         Icons.warning,
                         color: Colors.redAccent,
                       ),
-                      const SizedBox(width: 5,),
+                      const SizedBox(
+                        width: 5,
+                      ),
                       Text(
                         field.errorText!,
                         style: const TextStyle(
@@ -73,7 +78,8 @@ class FormInput extends StatelessWidget {
               ),
               ETextfield(
                 icon: icon,
-                isError: field.hasError,
+                isSecret: isSecrect,
+                isError: field.hasError || isError,
                 placeholder: placeholder,
                 onChange: (String? text) {
                   field.didChange(text);

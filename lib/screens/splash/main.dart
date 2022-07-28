@@ -16,7 +16,7 @@ class SplashScreen extends StatefulWidget {
 class _SplasScreen extends State<SplashScreen> {
   String token = "";
   late Timer _timer;
-  int time = 5;
+  int time = 2;
   @override
   void initState() {
     super.initState();
@@ -59,18 +59,16 @@ class _SplasScreen extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(token.isNotEmpty ? 'This is token' : ""),
-                Text(token),
-                Text('This page will navigate from $time seconds')
-              ],
-            ),
+    return Scaffold(
+      body: Center(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(token.isNotEmpty ? 'This is token' : ""),
+              Text(token),
+              Text('This page will navigate from $time seconds')
+            ],
           ),
         ),
       ),

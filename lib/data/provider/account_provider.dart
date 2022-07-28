@@ -40,13 +40,16 @@ class AccountProvider {
   Future<AccountModel> signup(AccountModel accountModel) async {
     const String apiUrl = '${constants.baseUrl}/signup';
     final body = json.encode({
-      'user_name': accountModel.userName,
-      'password': accountModel.password
+      'full_name': accountModel.fullName,
+      'password': accountModel.password,
+      'email': accountModel.email
     });
-
     final response = await API(apiUrl: apiUrl).post(body);
-    final responseAccountData =
-        AccountModel.fromJson(convert.jsonDecode(response.body));
-    return responseAccountData;
+    try {
+      var responseBody = convert.jsonDecode(response.body);
+      return AccountModel.fromJson(responseBody);
+    } catch (_) {
+      return AccountModel();
+    }
   }
 }

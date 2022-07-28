@@ -22,4 +22,17 @@ class AccountRepository {
       return true;
     }
   }
+
+  Future<bool> singup(AccountModel accountModel) async {
+    AccountModel signupResource = await AccountProvider().signup(accountModel);
+    if (signupResource.accessToken == "") {
+      return false;
+    } else {
+      setToken(signupResource.accessToken);
+      if (kDebugMode) {
+        print(await getToken());
+      }
+      return true;
+    }
+  }
 }

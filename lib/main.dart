@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
             initialRoute: '/',
             getPages: appRoutes(),
             translations: Messages(),
-            locale: const Locale('en', 'vi')),
+            locale: const Locale('vi', 'en')),
       ),
     );
   }

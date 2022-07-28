@@ -15,4 +15,27 @@ get messages => {
       'login.forgotPassword': 'Forgot password?',
       //Signup
       'signup.title': 'Signup',
+      'signup.welcome': 'Nice to meet you',
+
+      'signup.field.label.email': 'What’s your email?',
+      'signup.field.placeholder.email': 'Your email',
+
+      'signup.field.label.password': 'Create your password',
+      'signup.field.placeholder.password': 'Create a password',
+      'singup.field.validation.password1': 'Should have at least 8 characters.',
+      'singup.field.validation.password2':
+          'Must contain at least a special character.',
+      'singup.field.validation.password3': 'Must contain at least a number.',
+      'singup.field.validation.password4':
+          'Must contain at least an upper character.',
+
+      'signup.field.label.fullName': 'What should we call you?',
+      'signup.field.placeholder.fullName': 'Your fullname',
+
+      'signup.continue': 'Continue',
+
+      //validation
+      'validate.existedEmail': 'The email has been used, please try again',
+      'validate.required': '@field is a required field',
+      'validate.email': 'Email is invalid',
     };

@@ -50,7 +50,10 @@ Story get buttonStory => Story(
     builder: (context) => Column(
           children: [
             EIconButton(
-              icon: const Icon(Icons.abc),
+              icon: const Icon(
+                Icons.abc,
+                color: primaryColor,
+              ),
               height: 40,
               width: 40,
               onPressed: () {},

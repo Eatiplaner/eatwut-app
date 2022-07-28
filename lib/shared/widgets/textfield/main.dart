@@ -30,6 +30,7 @@ class _ETextfieldState extends State<ETextfield> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      width: double.infinity,
       child: CupertinoTextField(
         obscureText: widget.isSecret ? _obscureText : false,
         placeholder: widget.placeholder,

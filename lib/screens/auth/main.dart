@@ -13,15 +13,10 @@ class AuthScreen extends StatelessWidget {
         padding: const EdgeInsets.all(42),
         child: Center(
           child: Column(children: [
-            const Expanded(
+            Expanded(
               flex: 2,
               child: Center(
-                child: Text('Logo',
-                    style: TextStyle(
-                      fontSize: 64,
-                      fontFamily: fontFamily,
-                      fontWeight: FontWeight.w700,
-                    )),
+                child: Image.asset('assets/images/app-circle.png'),
               ),
             ),
             Expanded(
