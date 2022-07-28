@@ -14,7 +14,7 @@ void main() {
   testWidgets('Render register successful', (WidgetTester tester) async {
     await tester.pumpWidget(createWidgetForTesting(child: RegisterScreen()));
 
-    // Verify that our app render successful.
+    // Verify that our app render successful. test
     expect(find.textContaining('signup.welcome'.tr), findsWidgets);
   });
 }
