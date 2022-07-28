@@ -8,12 +8,13 @@
 import 'package:eatiplan_mobile/screens/auth/register/main.dart';
 import 'package:eatiplan_mobile/utils/create_widget_for_testing.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get/get.dart';
 
 void main() {
   testWidgets('Render register successful', (WidgetTester tester) async {
     await tester.pumpWidget(createWidgetForTesting(child: RegisterScreen()));
 
     // Verify that our app render successful.
-    expect(find.textContaining('Register'), findsWidgets);
+    expect(find.textContaining('signup.welcome'.tr), findsWidgets);
   });
 }
