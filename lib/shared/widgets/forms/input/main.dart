@@ -2,6 +2,7 @@ import 'package:eatiplan_mobile/shared/variables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:get/get.dart';
 
 import '../../textfield/main.dart';
 
@@ -54,7 +55,7 @@ class FormInput extends StatelessWidget {
                         width: 5,
                       ),
                       Text(
-                        field.errorText!,
+                        field.errorText!.tr,
                         style: const TextStyle(
                           fontSize: 12,
                           color: errorColor,

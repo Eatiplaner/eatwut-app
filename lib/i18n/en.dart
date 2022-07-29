@@ -34,8 +34,14 @@ get messages => {
 
       'signup.continue': 'Continue',
 
-      //validation
+      //validation common
       'validate.existedEmail': 'The email has been used, please try again',
-      'validate.required': '@field is a required field',
+      'validate.required': 'This field is required',
       'validate.email': 'Email is invalid',
+      'validate.min_length': 'The field must be at least @n characters long',
+      'validate.max_length': 'The field must be at most @n characters long',
+
+      //validation auth
+      'validate.auth.user_email_can_not_be_blank':
+          'Username/Email and Password cannot be blank'
     };

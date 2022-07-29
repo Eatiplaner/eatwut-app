@@ -33,8 +33,14 @@ get messages => {
 
       'signup.continue': 'Tiếp tục',
 
-      //validation
+      //validation common
       'validate.existedEmail': 'Email này đã được sử dụng hãy thử lại',
-      'validate.required': '@field là trường bắt buộc',
+      'validate.required': 'Trường này bắt buộc',
       'validate.email': 'Hãy điền đúng định dạng của email',
+      'validate.min_length': 'Trường này phải có ít nhất @n ký tự',
+      'validate.max_length': 'Trường này phải có tối đa @n ký tự',
+
+      //validation auth
+      'validate.auth.user_email_can_not_be_blank':
+          'Tên đăng nhập/Email và Mật khẩu không thể để trống'
     };
