@@ -19,6 +19,7 @@ class HomeScreen extends HookWidget {
 
     useEffect(() {
       getFirstLoad();
+      return null;
     }, []);
     return Scaffold(
       appBar: null,
