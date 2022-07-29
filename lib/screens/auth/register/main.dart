@@ -26,9 +26,20 @@ class RegisterScreen extends HookWidget {
       return false;
     }
 
+    bool isSpecialCase(String s) {
+      return s.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+    }
+
     bool hasSpecialCase() {
       if (passwordState.value.isNotEmpty) {
-        return passwordState.value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+        return isSpecialCase(passwordState.value);
+      }
+      return false;
+    }
+
+    bool isDigit(String s, int idx) {
+      if (passwordState.value.isNotEmpty) {
+        return "0".compareTo(s[idx]) <= 0 && "9".compareTo(s[idx]) >= 0;
       }
       return false;
     }
@@ -39,18 +50,13 @@ class RegisterScreen extends HookWidget {
         var character = '';
         while (i < passwordState.value.length) {
           character = passwordState.value.substring(i, i + 1);
-          if (character == character.toUpperCase()) {
+          if (character == character.toUpperCase() &&
+              !isSpecialCase(character) &&
+              !isDigit(character, 0)) {
             return true;
           }
           i++;
         }
-      }
-      return false;
-    }
-
-    bool isDigit(String s, int idx) {
-      if (passwordState.value.isNotEmpty) {
-        return "0".compareTo(s[idx]) <= 0 && "9".compareTo(s[idx]) >= 0;
       }
       return false;
     }
