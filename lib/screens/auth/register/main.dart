@@ -161,10 +161,8 @@ class RegisterScreen extends HookWidget {
                         label: "signup.field.label.email".tr,
                         icon: Icons.email_outlined,
                         placeholder: "signup.field.placeholder.email".tr,
-                        validator: ValidationBuilder()
-                            .required()
-                            .email('validate.email'.tr)
-                            .build(),
+                        validator:
+                            ValidationBuilder().required().email().build(),
                       ),
                       const SizedBox(height: 24),
                       FormInput(
@@ -234,6 +232,7 @@ class RegisterScreen extends HookWidget {
                         icon: Icons.account_circle_outlined,
                         placeholder: "signup.field.placeholder.fullName".tr,
                         validator: ValidationBuilder().build(),
+                        textInputAction: TextInputAction.done,
                       ),
                       const SizedBox(height: 24),
                       EButton(

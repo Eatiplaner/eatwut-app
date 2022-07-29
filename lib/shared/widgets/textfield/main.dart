@@ -3,15 +3,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ETextfield extends StatefulWidget {
-  const ETextfield(
-      {Key? key,
-      this.placeholder = "",
-      this.icon,
-      this.value = "",
-      this.onChange,
-      this.isSecret = false,
-      this.isError = false})
-      : super(key: key);
+  const ETextfield({
+    Key? key,
+    this.placeholder = "",
+    this.icon,
+    this.value = "",
+    this.onChange,
+    this.isSecret = false,
+    this.isError = false,
+    this.textInputAction = TextInputAction.next,
+  }) : super(key: key);
 
   final String placeholder;
   final IconData? icon;
@@ -19,6 +20,7 @@ class ETextfield extends StatefulWidget {
   final ValueChanged<String>? onChange;
   final bool isError;
   final bool isSecret;
+  final TextInputAction textInputAction;
 
   @override
   createState() => _ETextfieldState();
@@ -68,6 +70,7 @@ class _ETextfieldState extends State<ETextfield> {
         style: const TextStyle(
             color: primaryColor, fontFamily: fontFamily, fontSize: 15),
         onChanged: widget.onChange,
+        textInputAction: widget.textInputAction,
       ),
     );
   }

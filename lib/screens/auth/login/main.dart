@@ -59,7 +59,7 @@ class _LoginScreen extends State<LoginScreen> {
         context,
         color: Colors.redAccent,
         padding: const EdgeInsets.all(15),
-        msg: 'Username/Email and Password cannot be blank',
+        msg: 'validate.auth.user_email_can_not_be_blank'.tr,
         msgStyle: const TextStyle(color: Colors.white),
       );
     }
@@ -148,6 +148,7 @@ class _LoginScreen extends State<LoginScreen> {
                               password = value;
                             });
                           },
+                          textInputAction: TextInputAction.done,
                         ),
                         const SizedBox(height: 14),
                         TextButton(
