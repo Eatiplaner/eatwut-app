@@ -36,7 +36,7 @@ get messages => {
 
       //validation common
       'validate.existedEmail': 'The email has been used, please try again',
-      'validate.required': 'This field is required',
+      'validate.required': 'This is required field',
       'validate.email': 'Email is invalid',
       'validate.min_length': 'The field must be at least @n characters long',
       'validate.max_length': 'The field must be at most @n characters long',

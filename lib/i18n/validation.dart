@@ -6,7 +6,7 @@ class CustomValidationLocale extends FormValidatorLocale {
   String name() => 'custom';
 
   @override
-  String required() => "validate.required".tr;
+  String required() => 'validate.required'.tr;
 
   @override
   String minLength(String v, int n) => 'validate.min_length'.trParams({

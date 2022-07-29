@@ -117,6 +117,7 @@ class RegisterScreen extends HookWidget {
 
     return Scaffold(
         body: Container(
+      height: double.infinity,
       padding: const EdgeInsets.all(42),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,13 +167,14 @@ class RegisterScreen extends HookWidget {
                       ),
                       const SizedBox(height: 24),
                       FormInput(
-                        name: "password",
-                        label: "signup.field.label.password".tr,
-                        isSecrect: true,
-                        isError: passwordState.value != "" && isErrorPassword(),
-                        icon: Icons.lock_outline,
-                        placeholder: "signup.field.placeholder.password".tr,
-                      ),
+                          name: "password",
+                          label: "signup.field.label.password".tr,
+                          isSecrect: true,
+                          isError:
+                              passwordState.value != "" && isErrorPassword(),
+                          icon: Icons.lock_outline,
+                          placeholder: "signup.field.placeholder.password".tr,
+                          validator: ValidationBuilder().required('').build()),
                       const SizedBox(height: 10),
                       Column(
                         children: [

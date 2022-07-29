@@ -39,7 +39,12 @@ class AuthScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 TextButton(
-                    onPressed: () {},
+                    style: const ButtonStyle(
+                        enableFeedback: false,
+                        splashFactory: NoSplash.splashFactory),
+                    onPressed: () {
+                      Get.toNamed('/home');
+                    },
                     child: Text('login.guest'.tr,
                         style: const TextStyle(
                             fontSize: 14,

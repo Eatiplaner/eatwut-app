@@ -35,7 +35,7 @@ get messages => {
 
       //validation common
       'validate.existedEmail': 'Email này đã được sử dụng hãy thử lại',
-      'validate.required': 'Trường này bắt buộc',
+      'validate.required': 'Thông tin này bắt buộc',
       'validate.email': 'Hãy điền đúng định dạng của email',
       'validate.min_length': 'Trường này phải có ít nhất @n ký tự',
       'validate.max_length': 'Trường này phải có tối đa @n ký tự',
