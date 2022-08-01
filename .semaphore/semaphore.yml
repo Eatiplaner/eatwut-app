@@ -34,6 +34,11 @@ blocks:
       - Install and Cache deps
 promotions:
   - name: Deploy to TestFlight
-    pipeline_file: pipeline_2.yml
+    pipeline_file: pipeline_test_flight.yml
+    auto_promote:
+      when: tag =~ 'v*.*.*-staging' AND result = 'passed'
+
+  - name: Deploy to Beta
+    pipeline_file: pipeline_beta.yml
     auto_promote:
       when: tag =~ 'v*.*.*-staging' AND result = 'passed'

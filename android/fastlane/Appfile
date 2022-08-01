@@ -1,0 +1,2 @@
+json_key_file("./fastlane/pc-api-8083090071748702316-612-8f0ce2fdf57d.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+package_name("com.eatiplaner.eatiplanerMobile") # e.g. com.krausefx.app

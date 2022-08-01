@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.eatiplan_mobile">
+    package="com.eatiplaner.eatiplanerMobile">
    <application
-        android:label="eatiplan_mobile"
+        android:label="Eatiplaner mobile"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
