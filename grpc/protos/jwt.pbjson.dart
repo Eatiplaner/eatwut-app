@@ -31,15 +31,15 @@ final $typed_data.Uint8List validResponseDescriptor = $convert.base64Decode('Cg1
 const $core.Map<$core.String, $core.dynamic> JwtServiceBase$json = const {
   '1': 'JwtService',
   '2': const [
-    const {'1': 'ValidToken', '2': '.jwt_gprc.ValidRequest', '3': '.jwt_gprc.ValidResponse', '4': const {}},
+    const {'1': 'ValidToken', '2': '.auth.ValidRequest', '3': '.auth.ValidResponse', '4': const {}},
   ],
 };
 
 @$core.Deprecated('Use jwtServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> JwtServiceBase$messageJson = const {
-  '.jwt_gprc.ValidRequest': ValidRequest$json,
-  '.jwt_gprc.ValidResponse': ValidResponse$json,
+  '.auth.ValidRequest': ValidRequest$json,
+  '.auth.ValidResponse': ValidResponse$json,
 };
 
 /// Descriptor for `JwtService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
-final $typed_data.Uint8List jwtServiceDescriptor = $convert.base64Decode('CgpKd3RTZXJ2aWNlEj8KClZhbGlkVG9rZW4SFi5qd3RfZ3ByYy5WYWxpZFJlcXVlc3QaFy5qd3RfZ3ByYy5WYWxpZFJlc3BvbnNlIgA=');
+final $typed_data.Uint8List jwtServiceDescriptor = $convert.base64Decode('CgpKd3RTZXJ2aWNlEjcKClZhbGlkVG9rZW4SEi5hdXRoLlZhbGlkUmVxdWVzdBoTLmF1dGguVmFsaWRSZXNwb25zZSIA');

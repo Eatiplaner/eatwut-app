@@ -1,4 +1,4 @@
-package com.example.eatiplan_mobile
+package com.eatiplaner.eatiplanerMobile
 
 import io.flutter.embedding.android.FlutterActivity
 

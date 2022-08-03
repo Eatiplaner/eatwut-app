@@ -13,19 +13,14 @@ class AuthScreen extends StatelessWidget {
         padding: const EdgeInsets.all(42),
         child: Center(
           child: Column(children: [
-            const Expanded(
+            Expanded(
               flex: 2,
               child: Center(
-                child: Text('Logo',
-                    style: TextStyle(
-                      fontSize: 64,
-                      fontFamily: fontFamily,
-                      fontWeight: FontWeight.w700,
-                    )),
+                child: Image.asset('assets/images/app-circle.png'),
               ),
             ),
             Expanded(
-              flex: 1,
+              flex: 2,
               child: Column(children: [
                 EButton(
                   label: 'login.title'.tr,
@@ -38,19 +33,27 @@ class AuthScreen extends StatelessWidget {
                 EButton(
                   label: 'signup.title'.tr,
                   variant: ButtonVariant.secondary,
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/register');
+                  },
                 ),
                 const SizedBox(height: 20),
                 TextButton(
-                    onPressed: () {},
+                    style: const ButtonStyle(
+                        enableFeedback: false,
+                        splashFactory: NoSplash.splashFactory),
+                    onPressed: () {
+                      Get.toNamed('/home');
+                    },
                     child: Text('login.guest'.tr,
                         style: const TextStyle(
                             fontSize: 14,
                             color: primaryColor,
+                            fontFamily: fontFamily,
                             fontWeight: FontWeight.w500)))
               ]),
             ),
-            Expanded(
+            Flexible(
                 flex: 1,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,

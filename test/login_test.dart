@@ -1,16 +1,11 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:eatiplan_mobile/screens/auth/login/main.dart';
+import 'package:eatiplan_mobile/utils/create_widget_for_testing.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get/get.dart';
 
 void main() {
-  testWidgets('Render main successful', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const LoginScreen());
+  testWidgets('Render login successful', (WidgetTester tester) async {
+    await tester.pumpWidget(createWidgetForTesting(child: const LoginScreen()));
+    expect(find.textContaining('login.welcomeBack'.tr), findsWidgets);
   });
 }

@@ -6,22 +6,15 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:eatiplan_mobile/screens/auth/register/main.dart';
-import 'package:flutter/material.dart';
+import 'package:eatiplan_mobile/utils/create_widget_for_testing.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get/get.dart';
 
 void main() {
-  Widget createWidgetForTesting({required Widget child}) {
-    return MaterialApp(
-      home: child,
-    );
-  }
+  testWidgets('Render register successful', (WidgetTester tester) async {
+    await tester.pumpWidget(createWidgetForTesting(child: RegisterScreen()));
 
-  testWidgets('Render main successful', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester
-        .pumpWidget(createWidgetForTesting(child: const RegisterScreen()));
-
-    // Verify that our app render successful.
-    expect(find.textContaining('Register'), findsWidgets);
+    // Verify that our app render successful. test
+    expect(find.textContaining('signup.welcome'.tr), findsWidgets);
   });
 }

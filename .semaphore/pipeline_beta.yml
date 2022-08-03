@@ -1,0 +1,28 @@
+version: v1.0
+name: Pipeline Beta
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Install dependencies
+    task:
+      jobs:
+        - name: Install dependencies
+          commands:
+            - checkout
+            - cache restore flutter-packages
+            - flutter pub get
+            - cache store flutter-packages .packages
+  - name: Deploy to Beta
+    task:
+      jobs:
+        - name: Run beta deploy
+          commands:
+            - checkout
+            - cache restore flutter-packages .packages
+            - flutter build appbundle
+            - cd android 
+            - fastlane beta
+      secrets:
+        - name: flutter-env

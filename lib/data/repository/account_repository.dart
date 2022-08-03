@@ -1,39 +1,38 @@
-import 'dart:convert';
-import 'dart:convert' as convert;
-
 import 'package:eatiplan_mobile/data/model/account_model.dart';
-import 'package:eatiplan_mobile/utils/handle_request.dart';
-import './constants.dart' as constants;
+import 'package:eatiplan_mobile/data/provider/account_provider.dart';
+import 'package:eatiplan_mobile/utils/token/process_token.dart';
+import 'package:flutter/foundation.dart';
 
 class AccountRepository {
-  Future<AccountModel> login(AccountModel accountModel) async {
-    const String apiUrl = '${constants.baseUrl}/login';
-    var body = "";
-    if (accountModel.userName != "") {
-      body = json.encode({
-        'user_name': accountModel.userName,
-        'password': accountModel.password
-      });
+  /// It takes an AccountModel object as a parameter and returns a Future<bool>
+  /// object.
+  ///
+  /// Args:
+  ///   accountModel (AccountModel): The account model that contains the username
+  /// and password.
+  Future<bool> login(AccountModel accountModel) async {
+    AccountModel loginResource = await AccountProvider().login(accountModel);
+    if (loginResource.accessToken == "") {
+      return false;
+    } else {
+      setToken(loginResource.accessToken);
+      if (kDebugMode) {
+        print(await getToken());
+      }
+      return true;
     }
-    body = json.encode(
-        {'email': accountModel.email, 'password': accountModel.password});
-
-    final response = await API(apiUrl: apiUrl).post(body);
-    final responseAccountData =
-        AccountModel.fromJson(convert.jsonDecode(response.body));
-    return responseAccountData;
   }
 
-  Future<AccountModel> signup(AccountModel accountModel) async {
-    const String apiUrl = '${constants.baseUrl}/signup';
-    final body = json.encode({
-      'user_name': accountModel.userName,
-      'password': accountModel.password
-    });
-
-    final response = await API(apiUrl: apiUrl).post(body);
-    final responseAccountData =
-        AccountModel.fromJson(convert.jsonDecode(response.body));
-    return responseAccountData;
+  Future<bool> singup(AccountModel accountModel) async {
+    AccountModel signupResource = await AccountProvider().signup(accountModel);
+    if (signupResource.accessToken == "") {
+      return false;
+    } else {
+      setToken(signupResource.accessToken);
+      if (kDebugMode) {
+        print(await getToken());
+      }
+      return true;
+    }
   }
 }
