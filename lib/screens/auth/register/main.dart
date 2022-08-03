@@ -117,7 +117,6 @@ class RegisterScreen extends HookWidget {
 
     String? email = Get.parameters['email'];
     useEffect(() {
-      print(email);
       Future.delayed(const Duration(seconds: 1), () {
         FToast.toast(
           context,
