@@ -38,7 +38,7 @@ class _SplasScreen extends State<SplashScreen> {
         if (token.isNotEmpty) {
           Get.toNamed('/home');
         } else {
-          Get.toNamed('/auth');
+          Get.toNamed('/storybook');
         }
       }
     });

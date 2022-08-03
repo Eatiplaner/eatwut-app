@@ -27,9 +27,9 @@ class ERadio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: Container(
-        height: 36,
-        child: ListView.builder(scrollDirection: Axis.horizontal, itemCount: itemList.length, itemBuilder: (context, index) {
+      child: SizedBox(
+        height: 360,
+        child: ListView.builder(itemCount: itemList.length, itemBuilder: (context, index) {
           return radioWidget(title: itemList[index].name, value: itemList[index].value, groupValue: value, onChanged: onChange);
         },),
       )
@@ -43,39 +43,43 @@ Widget radioWidget({
   required String groupValue,
   required ValueChanged<String> onChanged,
 }) {
-  return Theme(
-    data: ThemeData(unselectedWidgetColor: primaryColor),
-    child: InkWell(
-      onTap: () {
-        onChanged(value);
-      },
-      child: Row(
-        children: [
-          Radio<String>(
-            visualDensity: const VisualDensity(horizontal: -3),
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            activeColor: primaryColor,
-            focusColor: primaryColor,
-            groupValue: groupValue,
-            value: value,
-            onChanged: (newValue) {
-              onChanged(newValue!);
-            },
-          ),
-          Text(
-            title,
-            style: const TextStyle(
-              fontWeight: FontWeight.w400,
-              fontSize: 15,
-              color: primaryColor,
-              height: 70,
-            ),
-          ),
-          const SizedBox(width: 12.0),
-        ],
+  return Text(title,
+      style: const TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: 15,
+        color: primaryColor,
       ),
-    ),
   );
+  // return InkWell(
+  //     onTap: () {
+  //       onChanged(value);
+  //     },
+  //     child: Row(
+  //       children: [
+  //         Radio<String>(
+  //           // visualDensity: const VisualDensity(horizontal: -3),
+  //           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+  //           activeColor: primaryColor,
+  //           focusColor: primaryColor,
+  //           groupValue: groupValue,
+  //           value: value,
+  //           onChanged: (newValue) {
+  //             onChanged(newValue!);
+  //           },
+  //         ),
+  //         Text(
+  //           title,
+  //           style: const TextStyle(
+  //             fontWeight: FontWeight.w400,
+  //             fontSize: 15,
+  //             color: primaryColor,
+  //             height: 70,
+  //           ),
+  //         ),
+  //         const SizedBox(width: 12.0),
+  //       ],
+  //     ),
+  //   );
 }
 
 Story get radioStory => Story(
