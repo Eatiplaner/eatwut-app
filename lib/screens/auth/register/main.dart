@@ -115,6 +115,17 @@ class RegisterScreen extends HookWidget {
       }
     }
 
+    useEffect(() {
+      String? email = Get.parameters['email'];
+      if (email != null) {
+        FToast.toast(
+          context,
+          msg: email,
+        );
+      }
+      return null;
+    }, []);
+
     return Scaffold(
         body: Container(
       height: double.infinity,

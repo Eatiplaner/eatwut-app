@@ -4,10 +4,10 @@ import 'package:eatiplan_mobile/i18n/main.dart';
 import 'package:eatiplan_mobile/i18n/validation.dart';
 import 'package:eatiplan_mobile/provider/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:form_validator/form_validator.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:provider/provider.dart';
-import 'package:form_validator/form_validator.dart';
 
 Future main() async {
   runApp(const MyApp());

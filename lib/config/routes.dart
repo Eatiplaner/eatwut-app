@@ -29,7 +29,7 @@ appRoutes() => [
         transitionDuration: const Duration(milliseconds: 300),
       ),
       GetPage(
-        name: '/login',
+        name: '/login?token',
         page: () => const LoginScreen(),
         middlewares: [TrackingMiddelware()],
         transition: Transition.native,
