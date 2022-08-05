@@ -43,43 +43,35 @@ Widget radioWidget({
   required String groupValue,
   required ValueChanged<String> onChanged,
 }) {
-  return Text(title,
-      style: const TextStyle(
-        fontWeight: FontWeight.w400,
-        fontSize: 15,
-        color: primaryColor,
+  return InkWell(
+      onTap: () {
+        onChanged(value);
+      },
+      child: Row(
+        children: [
+          Radio<String>(
+            visualDensity: const VisualDensity(horizontal: -3),
+            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            activeColor: primaryColor,
+            focusColor: primaryColor,
+            groupValue: groupValue,
+            value: value,
+            onChanged: (newValue) {
+              onChanged(newValue!);
+            },
+          ),
+          Text(
+            title,
+            style: const TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 15,
+              color: primaryColor,
+            ),
+          ),
+          const SizedBox(width: 12.0),
+        ],
       ),
-  );
-  // return InkWell(
-  //     onTap: () {
-  //       onChanged(value);
-  //     },
-  //     child: Row(
-  //       children: [
-  //         Radio<String>(
-  //           // visualDensity: const VisualDensity(horizontal: -3),
-  //           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-  //           activeColor: primaryColor,
-  //           focusColor: primaryColor,
-  //           groupValue: groupValue,
-  //           value: value,
-  //           onChanged: (newValue) {
-  //             onChanged(newValue!);
-  //           },
-  //         ),
-  //         Text(
-  //           title,
-  //           style: const TextStyle(
-  //             fontWeight: FontWeight.w400,
-  //             fontSize: 15,
-  //             color: primaryColor,
-  //             height: 70,
-  //           ),
-  //         ),
-  //         const SizedBox(width: 12.0),
-  //       ],
-  //     ),
-  //   );
+    );
 }
 
 Story get radioStory => Story(
