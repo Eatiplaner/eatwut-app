@@ -28,7 +28,7 @@ class ERadio extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       child: SizedBox(
-        height: 360,
+        height: itemList.length * 55,
         child: ListView.builder(itemCount: itemList.length, itemBuilder: (context, index) {
           return radioWidget(title: itemList[index].name, value: itemList[index].value, groupValue: value, onChanged: onChange);
         },),
