@@ -1,11 +1,10 @@
 ///
 //  Generated code. Do not modify.
-//  source: protos/jwt.proto
+//  source: jwt.proto
 //
 // @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
-import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -102,15 +101,5 @@ class ValidResponse extends $pb.GeneratedMessage {
   $core.bool hasValid() => $_has(0);
   @$pb.TagNumber(1)
   void clearValid() => clearField(1);
-}
-
-class JwtServiceApi {
-  $pb.RpcClient _client;
-  JwtServiceApi(this._client);
-
-  $async.Future<ValidResponse> validToken($pb.ClientContext? ctx, ValidRequest request) {
-    var emptyResponse = ValidResponse();
-    return _client.invoke<ValidResponse>(ctx, 'JwtService', 'ValidToken', request, emptyResponse);
-  }
 }
 

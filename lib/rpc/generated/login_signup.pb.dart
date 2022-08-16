@@ -1,11 +1,10 @@
 ///
 //  Generated code. Do not modify.
-//  source: protos/login_signup.proto
+//  source: login_signup.proto
 //
 // @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
-import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -382,6 +381,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ..pc<UserProvider>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'providers', $pb.PbFieldType.PM, subBuilder: UserProvider.create)
     ..pPS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'preferCategories')
     ..aOB(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isActive')
+    ..aOB(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isKol')
     ..hasRequiredFields = false
   ;
 
@@ -400,6 +400,7 @@ class UserResponse extends $pb.GeneratedMessage {
     $core.Iterable<UserProvider>? providers,
     $core.Iterable<$core.String>? preferCategories,
     $core.bool? isActive,
+    $core.bool? isKol,
   }) {
     final _result = create();
     if (id != null) {
@@ -440,6 +441,9 @@ class UserResponse extends $pb.GeneratedMessage {
     }
     if (isActive != null) {
       _result.isActive = isActive;
+    }
+    if (isKol != null) {
+      _result.isKol = isKol;
     }
     return _result;
   }
@@ -562,19 +566,14 @@ class UserResponse extends $pb.GeneratedMessage {
   $core.bool hasIsActive() => $_has(12);
   @$pb.TagNumber(13)
   void clearIsActive() => clearField(13);
-}
 
-class LoginSignupServiceApi {
-  $pb.RpcClient _client;
-  LoginSignupServiceApi(this._client);
-
-  $async.Future<UserResponse> findUserByCredential($pb.ClientContext? ctx, FindUserRequest request) {
-    var emptyResponse = UserResponse();
-    return _client.invoke<UserResponse>(ctx, 'LoginSignupService', 'FindUserByCredential', request, emptyResponse);
-  }
-  $async.Future<UserResponse> createUser($pb.ClientContext? ctx, CreateRequest request) {
-    var emptyResponse = UserResponse();
-    return _client.invoke<UserResponse>(ctx, 'LoginSignupService', 'CreateUser', request, emptyResponse);
-  }
+  @$pb.TagNumber(14)
+  $core.bool get isKol => $_getBF(13);
+  @$pb.TagNumber(14)
+  set isKol($core.bool v) { $_setBool(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasIsKol() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearIsKol() => clearField(14);
 }
 

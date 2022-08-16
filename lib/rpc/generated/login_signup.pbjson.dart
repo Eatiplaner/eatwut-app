@@ -1,6 +1,6 @@
 ///
 //  Generated code. Do not modify.
-//  source: protos/login_signup.proto
+//  source: login_signup.proto
 //
 // @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,deprecated_member_use_from_same_package,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
@@ -81,27 +81,9 @@ const UserResponse$json = const {
     const {'1': 'providers', '3': 11, '4': 3, '5': 11, '6': '.user.UserProvider', '10': 'providers'},
     const {'1': 'prefer_categories', '3': 12, '4': 3, '5': 9, '10': 'preferCategories'},
     const {'1': 'is_active', '3': 13, '4': 1, '5': 8, '10': 'isActive'},
+    const {'1': 'is_kol', '3': 14, '4': 1, '5': 8, '10': 'isKol'},
   ],
 };
 
 /// Descriptor for `UserResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userResponseDescriptor = $convert.base64Decode('CgxVc2VyUmVzcG9uc2USDgoCaWQYASABKARSAmlkEhoKCHVzZXJuYW1lGAIgASgJUgh1c2VybmFtZRIUCgVlbWFpbBgDIAEoCVIFZW1haWwSGwoJZnVsbF9uYW1lGAQgASgJUghmdWxsTmFtZRIQCgNiaW8YBSABKAlSA2JpbxIUCgVwaG9uZRgGIAEoCVIFcGhvbmUSFgoGZ2VuZGVyGAcgASgJUgZnZW5kZXISEAoDZG9iGAggASgJUgNkb2ISHQoKbGFzdF9sb2dpbhgJIAEoCVIJbGFzdExvZ2luEi8KCWFkZHJlc3NlcxgKIAMoCzIRLnVzZXIuVXNlckFkZHJlc3NSCWFkZHJlc3NlcxIwCglwcm92aWRlcnMYCyADKAsyEi51c2VyLlVzZXJQcm92aWRlclIJcHJvdmlkZXJzEisKEXByZWZlcl9jYXRlZ29yaWVzGAwgAygJUhBwcmVmZXJDYXRlZ29yaWVzEhsKCWlzX2FjdGl2ZRgNIAEoCFIIaXNBY3RpdmU=');
-const $core.Map<$core.String, $core.dynamic> LoginSignupServiceBase$json = const {
-  '1': 'LoginSignupService',
-  '2': const [
-    const {'1': 'FindUserByCredential', '2': '.user.FindUserRequest', '3': '.user.UserResponse', '4': const {}},
-    const {'1': 'CreateUser', '2': '.user.CreateRequest', '3': '.user.UserResponse', '4': const {}},
-  ],
-};
-
-@$core.Deprecated('Use loginSignupServiceDescriptor instead')
-const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> LoginSignupServiceBase$messageJson = const {
-  '.user.FindUserRequest': FindUserRequest$json,
-  '.user.UserResponse': UserResponse$json,
-  '.user.UserAddress': UserAddress$json,
-  '.user.UserProvider': UserProvider$json,
-  '.user.CreateRequest': CreateRequest$json,
-};
-
-/// Descriptor for `LoginSignupService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
-final $typed_data.Uint8List loginSignupServiceDescriptor = $convert.base64Decode('ChJMb2dpblNpZ251cFNlcnZpY2USQwoURmluZFVzZXJCeUNyZWRlbnRpYWwSFS51c2VyLkZpbmRVc2VyUmVxdWVzdBoSLnVzZXIuVXNlclJlc3BvbnNlIgASNwoKQ3JlYXRlVXNlchITLnVzZXIuQ3JlYXRlUmVxdWVzdBoSLnVzZXIuVXNlclJlc3BvbnNlIgA=');
+final $typed_data.Uint8List userResponseDescriptor = $convert.base64Decode('CgxVc2VyUmVzcG9uc2USDgoCaWQYASABKARSAmlkEhoKCHVzZXJuYW1lGAIgASgJUgh1c2VybmFtZRIUCgVlbWFpbBgDIAEoCVIFZW1haWwSGwoJZnVsbF9uYW1lGAQgASgJUghmdWxsTmFtZRIQCgNiaW8YBSABKAlSA2JpbxIUCgVwaG9uZRgGIAEoCVIFcGhvbmUSFgoGZ2VuZGVyGAcgASgJUgZnZW5kZXISEAoDZG9iGAggASgJUgNkb2ISHQoKbGFzdF9sb2dpbhgJIAEoCVIJbGFzdExvZ2luEi8KCWFkZHJlc3NlcxgKIAMoCzIRLnVzZXIuVXNlckFkZHJlc3NSCWFkZHJlc3NlcxIwCglwcm92aWRlcnMYCyADKAsyEi51c2VyLlVzZXJQcm92aWRlclIJcHJvdmlkZXJzEisKEXByZWZlcl9jYXRlZ29yaWVzGAwgAygJUhBwcmVmZXJDYXRlZ29yaWVzEhsKCWlzX2FjdGl2ZRgNIAEoCFIIaXNBY3RpdmUSFQoGaXNfa29sGA4gASgIUgVpc0tvbA==');
