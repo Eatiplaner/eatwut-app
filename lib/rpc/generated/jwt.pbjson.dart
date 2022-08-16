@@ -1,6 +1,6 @@
 ///
 //  Generated code. Do not modify.
-//  source: protos/jwt.proto
+//  source: jwt.proto
 //
 // @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,deprecated_member_use_from_same_package,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
@@ -28,18 +28,3 @@ const ValidResponse$json = const {
 
 /// Descriptor for `ValidResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List validResponseDescriptor = $convert.base64Decode('Cg1WYWxpZFJlc3BvbnNlEhQKBXZhbGlkGAEgASgIUgV2YWxpZA==');
-const $core.Map<$core.String, $core.dynamic> JwtServiceBase$json = const {
-  '1': 'JwtService',
-  '2': const [
-    const {'1': 'ValidToken', '2': '.auth.ValidRequest', '3': '.auth.ValidResponse', '4': const {}},
-  ],
-};
-
-@$core.Deprecated('Use jwtServiceDescriptor instead')
-const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> JwtServiceBase$messageJson = const {
-  '.auth.ValidRequest': ValidRequest$json,
-  '.auth.ValidResponse': ValidResponse$json,
-};
-
-/// Descriptor for `JwtService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
-final $typed_data.Uint8List jwtServiceDescriptor = $convert.base64Decode('CgpKd3RTZXJ2aWNlEjcKClZhbGlkVG9rZW4SEi5hdXRoLlZhbGlkUmVxdWVzdBoTLmF1dGguVmFsaWRSZXNwb25zZSIA');

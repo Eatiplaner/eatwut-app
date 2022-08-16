@@ -1,5 +1,5 @@
 import 'package:eatiplan_mobile/data/model/account_model.dart';
-import 'package:eatiplan_mobile/data/provider/account_provider.dart';
+import 'package:eatiplan_mobile/data/provider/rest/account_provider.dart';
 import 'package:eatiplan_mobile/utils/token/process_token.dart';
 import 'package:flutter/foundation.dart';
 

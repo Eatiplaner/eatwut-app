@@ -5,7 +5,7 @@ import 'dart:convert' as convert;
 import 'package:eatiplan_mobile/data/model/account_model.dart';
 import 'package:eatiplan_mobile/utils/handle_request.dart';
 
-import './constants.dart' as constants;
+import '../constants.dart' as constants;
 
 class AccountProvider {
   /// A function that takes in an AccountModel object and returns a

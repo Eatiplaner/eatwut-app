@@ -1,9 +1,9 @@
 source: Eatiplan-Project/eatiplan-grpc-proto
 branch: main
-outpb: protos
-outdir: grpc
+outpb: lib/rpc/generated
+outdir: lib/rpc/generated
 token_key: GH_PROTO_REPO_TOKEN
 dependencies:
   - auth/jwt
   - user/login_signup
-command: protoc --dart_out=$outdir $outpb/$dependency.proto
+command: protoc --dart_out=grpc:$outdir -I=$outpb $dependency.proto
