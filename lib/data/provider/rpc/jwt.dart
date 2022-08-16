@@ -5,13 +5,7 @@ class JwtProvider {
   Future<void> main(String token) async {
     final stub = JwtServiceClient(RpcProvider.instance.channel());
 
-    try {
-      var response = await stub.validToken(ValidRequest()..token = token);
-      print('Token is valid: ${response.valid}');
-    } catch (e) {
-      print('Caught error: $e');
-    }
-
+    await stub.validToken(ValidRequest()..token = token);
     await RpcProvider.instance.channel().shutdown();
   }
 }
