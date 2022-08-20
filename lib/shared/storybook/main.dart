@@ -1,6 +1,7 @@
 import 'package:eatiplan_mobile/shared/widgets/button/main.dart';
 import 'package:eatiplan_mobile/shared/widgets/buttons/mode_toggle_button/stories.dart';
 import 'package:eatiplan_mobile/shared/widgets/forms/input/stories.dart';
+import 'package:eatiplan_mobile/shared/widgets/header/stories.dart';
 import 'package:eatiplan_mobile/shared/widgets/sample/stories.dart';
 import 'package:flutter/material.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
@@ -14,7 +15,8 @@ class StoryBook extends StatelessWidget {
           sampleStory,
           modeToggleButtonStory,
           formInputStory,
-          buttonStory
+          buttonStory,
+          headerStory
         ],
       );
 }
