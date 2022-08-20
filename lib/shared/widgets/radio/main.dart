@@ -1,6 +1,7 @@
 import 'package:eatiplan_mobile/shared/variables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 class Item {
@@ -10,7 +11,7 @@ class Item {
   Item({this.name = "", this.value = ""});
 }
 
-class ERadio extends StatelessWidget {
+class ERadio extends HookWidget {
   const ERadio(
       {Key? key,
       this.value = "",
@@ -26,6 +27,7 @@ class ERadio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var data = useState<String>("");
     return SizedBox(
         child: SizedBox(
       height: itemList.length * 55,
@@ -33,10 +35,14 @@ class ERadio extends StatelessWidget {
         itemCount: itemList.length,
         itemBuilder: (context, index) {
           return radioWidget(
-              title: itemList[index].name,
-              value: itemList[index].value,
-              groupValue: value,
-              onChanged: onChange);
+            title: itemList[index].name,
+            value: itemList[index].value,
+            groupValue: data.value,
+            onChanged: (val) {
+              data.value = val;
+              onChange(val);
+            },
+          );
         },
       ),
     ));
@@ -50,13 +56,16 @@ Widget radioWidget({
   required ValueChanged<String> onChanged,
 }) {
   return InkWell(
+    highlightColor: Colors.transparent,
+    splashColor: Colors.transparent,
+    enableFeedback: false,
     onTap: () {
       onChanged(value);
     },
     child: Row(
       children: [
         Radio<String>(
-          visualDensity: const VisualDensity(horizontal: -3),
+          splashRadius: 0,
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           activeColor: primaryColor,
           focusColor: primaryColor,
@@ -74,7 +83,6 @@ Widget radioWidget({
             color: primaryColor,
           ),
         ),
-        const SizedBox(width: 12.0),
       ],
     ),
   );
