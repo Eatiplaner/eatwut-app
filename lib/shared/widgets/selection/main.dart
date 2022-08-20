@@ -81,7 +81,7 @@ class _ESelectionState extends State<ESelection> {
         Row(
           children: [
             Text(
-              widget.itemList[index].name ?? "",
+              widget.itemList[index].name,
               style: const TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 15,
