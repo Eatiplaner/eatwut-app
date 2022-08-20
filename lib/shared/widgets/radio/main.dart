@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
-class Item{
+class Item {
   String name;
   String value;
 
@@ -13,10 +13,10 @@ class Item{
 class ERadio extends StatelessWidget {
   const ERadio(
       {Key? key,
-        this.value = "",
-        required this.onChange,
-        required this.itemList,
-        this.isError = false})
+      this.value = "",
+      required this.onChange,
+      required this.itemList,
+      this.isError = false})
       : super(key: key);
 
   final List<Item> itemList;
@@ -27,13 +27,19 @@ class ERadio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: SizedBox(
-        height: itemList.length * 55,
-        child: ListView.builder(itemCount: itemList.length, itemBuilder: (context, index) {
-          return radioWidget(title: itemList[index].name, value: itemList[index].value, groupValue: value, onChanged: onChange);
-        },),
-      )
-    );
+        child: SizedBox(
+      height: itemList.length * 55,
+      child: ListView.builder(
+        itemCount: itemList.length,
+        itemBuilder: (context, index) {
+          return radioWidget(
+              title: itemList[index].name,
+              value: itemList[index].value,
+              groupValue: value,
+              onChanged: onChange);
+        },
+      ),
+    ));
   }
 }
 
@@ -44,41 +50,47 @@ Widget radioWidget({
   required ValueChanged<String> onChanged,
 }) {
   return InkWell(
-      onTap: () {
-        onChanged(value);
-      },
-      child: Row(
-        children: [
-          Radio<String>(
-            visualDensity: const VisualDensity(horizontal: -3),
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            activeColor: primaryColor,
-            focusColor: primaryColor,
-            groupValue: groupValue,
-            value: value,
-            onChanged: (newValue) {
-              onChanged(newValue!);
-            },
+    onTap: () {
+      onChanged(value);
+    },
+    child: Row(
+      children: [
+        Radio<String>(
+          visualDensity: const VisualDensity(horizontal: -3),
+          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          activeColor: primaryColor,
+          focusColor: primaryColor,
+          groupValue: groupValue,
+          value: value,
+          onChanged: (newValue) {
+            onChanged(newValue!);
+          },
+        ),
+        Text(
+          title,
+          style: const TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 15,
+            color: primaryColor,
           ),
-          Text(
-            title,
-            style: const TextStyle(
-              fontWeight: FontWeight.w400,
-              fontSize: 15,
-              color: primaryColor,
-            ),
-          ),
-          const SizedBox(width: 12.0),
-        ],
-      ),
-    );
+        ),
+        const SizedBox(width: 12.0),
+      ],
+    ),
+  );
 }
 
 Story get radioStory => Story(
-  name: "Radio",
-  builder: (context) => Column(
-    children: [
-      ERadio(onChange: (value) {}, itemList: [Item(name: "Male", value: "male"), Item(name: "Female", value: "female"), Item(name: "Other", value: "other")])
-    ],
-  )
-);
+    name: "Radio",
+    builder: (context) => Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ERadio(onChange: (value) {}, itemList: [
+                Item(name: "Male", value: "male"),
+                Item(name: "Female", value: "female"),
+                Item(name: "Other", value: "other")
+              ]),
+            )
+          ],
+        ));

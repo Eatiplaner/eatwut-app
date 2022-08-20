@@ -90,10 +90,13 @@ class _ESelectionState extends State<ESelection> {
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
             ),
-            const Icon(
-              Icons.info_outline,
-              color: primaryColor,
-              size: 24.0,
+            const Padding(
+              padding: EdgeInsets.only(left: 8.0),
+              child: Icon(
+                Icons.info_outline,
+                color: primaryColor,
+                size: 24.0,
+              ),
             ),
           ],
         ),
@@ -106,26 +109,30 @@ Story get selectionStory => Story(
       name: "Selection",
       builder: (context) => Column(
         children: [
-          ESelection(
-            onOptionClick: (value) {},
-            itemList: [
-              Item(
-                  name: "Intermittent Fasting",
-                  value: "intermittent",
-                  isEnable: true),
-              Item(
-                  name: "Mediterranean Diet",
-                  value: "mediterranean",
-                  isEnable: true),
-              Item(name: "Veganism", value: "veganism", isEnable: true),
-              Item(name: "Sirtfood Diet", value: "sirtfood", isEnable: true),
-              Item(name: "Carnivore Diet", value: "carnivore", isEnable: true),
-              Item(name: "Paleo Diet", value: "paleo", isEnable: true),
-              Item(
-                  name: "Dessert with Breakfast Diet",
-                  value: "breakfast",
-                  isEnable: true),
-            ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ESelection(
+              onOptionClick: (value) {},
+              itemList: [
+                Item(
+                    name: "Intermittent Fasting",
+                    value: "intermittent",
+                    isEnable: true),
+                Item(
+                    name: "Mediterranean Diet",
+                    value: "mediterranean",
+                    isEnable: true),
+                Item(name: "Veganism", value: "veganism", isEnable: true),
+                Item(name: "Sirtfood Diet", value: "sirtfood", isEnable: true),
+                Item(
+                    name: "Carnivore Diet", value: "carnivore", isEnable: true),
+                Item(name: "Paleo Diet", value: "paleo", isEnable: true),
+                Item(
+                    name: "Dessert with Breakfast Diet",
+                    value: "breakfast",
+                    isEnable: true),
+              ],
+            ),
           ),
         ],
       ),
