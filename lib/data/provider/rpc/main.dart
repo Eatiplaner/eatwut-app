@@ -1,4 +1,5 @@
 import 'package:grpc/grpc.dart';
+
 import '../constants.dart' as constants;
 
 class RpcProvider {
@@ -9,7 +10,7 @@ class RpcProvider {
   static final instance = RpcProvider._();
 
   ClientChannel channel() {
-    return ClientChannel(constants.baseUrl,
+    return ClientChannel(constants.baseUrlNoPort,
         port: 9080,
         options:
             const ChannelOptions(credentials: ChannelCredentials.insecure()));

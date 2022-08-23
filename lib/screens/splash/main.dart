@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:eatiplan_mobile/data/provider/rpc/jwt.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
@@ -10,21 +11,20 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  createState() => _SplasScreen();
+  createState() => _SplashScreen();
 }
 
-class _SplasScreen extends State<SplashScreen> {
+class _SplashScreen extends State<SplashScreen> {
   String token = "";
   late Timer _timer;
-  int time = 2;
+  int time = 1;
   @override
   void initState() {
     super.initState();
     initialToken();
-    startTimer();
   }
 
-  void startTimer() {
+  void startTimer(bool isAuth) {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (time > 0) {
         if (kDebugMode) {
@@ -35,7 +35,7 @@ class _SplasScreen extends State<SplashScreen> {
         });
       } else {
         _timer.cancel();
-        if (token.isNotEmpty) {
+        if (isAuth) {
           Get.toNamed('/home');
         } else {
           Get.toNamed('/auth');
@@ -52,9 +52,9 @@ class _SplasScreen extends State<SplashScreen> {
 
   void initialToken() async {
     final responseToken = await getToken();
-    setState(() {
-      token = responseToken ?? "";
-    });
+    final bool isAuth =
+        await JwtProvider().validToken(responseToken.toString());
+    startTimer(isAuth);
   }
 
   @override
@@ -62,14 +62,7 @@ class _SplasScreen extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(token.isNotEmpty ? 'This is token' : ""),
-              Text(token),
-              Text('This page will navigate from $time seconds')
-            ],
-          ),
+          child: Image.asset('assets/images/app-circle.png'),
         ),
       ),
     );
