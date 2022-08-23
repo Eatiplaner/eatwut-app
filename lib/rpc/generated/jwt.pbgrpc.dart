@@ -10,22 +10,32 @@ import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:grpc/service_api.dart' as $grpc;
-import 'jwt.pb.dart' as $0;
+import 'google/protobuf/empty.pb.dart' as $0;
+import 'jwt.pb.dart' as $1;
 export 'jwt.pb.dart';
 
 class JwtServiceClient extends $grpc.Client {
-  static final _$validToken =
-      $grpc.ClientMethod<$0.ValidRequest, $0.ValidResponse>(
-          '/auth.JwtService/ValidToken',
-          ($0.ValidRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.ValidResponse.fromBuffer(value));
+  static final _$validActivationToken =
+      $grpc.ClientMethod<$0.Empty, $1.ValidResponse>(
+          '/auth.JwtService/ValidActivationToken',
+          ($0.Empty value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $1.ValidResponse.fromBuffer(value));
+  static final _$validToken = $grpc.ClientMethod<$0.Empty, $1.ValidResponse>(
+      '/auth.JwtService/ValidToken',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.ValidResponse.fromBuffer(value));
 
   JwtServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.ValidResponse> validToken($0.ValidRequest request,
+  $grpc.ResponseFuture<$1.ValidResponse> validActivationToken($0.Empty request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$validActivationToken, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.ValidResponse> validToken($0.Empty request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$validToken, request, options: options);
   }
@@ -35,20 +45,34 @@ abstract class JwtServiceBase extends $grpc.Service {
   $core.String get $name => 'auth.JwtService';
 
   JwtServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.ValidRequest, $0.ValidResponse>(
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.ValidResponse>(
+        'ValidActivationToken',
+        validActivationToken_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.ValidResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.ValidResponse>(
         'ValidToken',
         validToken_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.ValidRequest.fromBuffer(value),
-        ($0.ValidResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.ValidResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.ValidResponse> validToken_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.ValidRequest> request) async {
+  $async.Future<$1.ValidResponse> validActivationToken_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return validActivationToken(call, await request);
+  }
+
+  $async.Future<$1.ValidResponse> validToken_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
     return validToken(call, await request);
   }
 
-  $async.Future<$0.ValidResponse> validToken(
-      $grpc.ServiceCall call, $0.ValidRequest request);
+  $async.Future<$1.ValidResponse> validActivationToken(
+      $grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.ValidResponse> validToken(
+      $grpc.ServiceCall call, $0.Empty request);
 }
