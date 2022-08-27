@@ -23,7 +23,7 @@ class AuthScreen extends StatelessWidget {
               flex: 2,
               child: Column(children: [
                 EButton(
-                  label: 'login.title'.tr,
+                  label: 'auth.login.title'.tr,
                   variant: ButtonVariant.primary,
                   onPressed: () {
                     Get.toNamed('/login');
@@ -31,7 +31,7 @@ class AuthScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 EButton(
-                  label: 'signup.title'.tr,
+                  label: 'auth.register.title'.tr,
                   variant: ButtonVariant.secondary,
                   onPressed: () {
                     Get.toNamed('/register');
@@ -45,7 +45,7 @@ class AuthScreen extends StatelessWidget {
                     onPressed: () {
                       Get.toNamed('/home');
                     },
-                    child: Text('login.guest'.tr,
+                    child: Text('auth.login.guest'.tr,
                         style: const TextStyle(
                             fontSize: 14,
                             color: primaryColor,

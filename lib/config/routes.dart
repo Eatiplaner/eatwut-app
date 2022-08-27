@@ -59,6 +59,12 @@ appRoutes() => [
         transitionDuration: const Duration(milliseconds: 300),
       ),
       GetPage(
+        name: '/forgot-password',
+        page: () => const ResetPasswordSuccessScreen(),
+        transition: Transition.fadeIn,
+        transitionDuration: const Duration(milliseconds: 300),
+      ),
+      GetPage(
         name: '/reset-password-success',
         page: () => const ResetPasswordSuccessScreen(),
         transition: Transition.fadeIn,

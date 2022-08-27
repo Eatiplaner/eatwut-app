@@ -81,7 +81,7 @@ class RegisterScreen extends HookWidget {
           hasMoreThan8Chars() == false;
     }
 
-    doSignup(context) async {
+    doRegister(context) async {
       _formKey.currentState?.validate();
       if (_formKey.currentState?.isValid == true &&
           isErrorPassword() == false) {
@@ -91,7 +91,7 @@ class RegisterScreen extends HookWidget {
         bool isSignup = false;
         AccountModel request =
             AccountModel(email: email, password: password, fullName: fullName);
-        isSignup = await AccountRepository().singup(request);
+        isSignup = await AccountRepository().signup(request);
         if (isSignup) {
           FToast.toast(
             context,
@@ -150,7 +150,7 @@ class RegisterScreen extends HookWidget {
                     children: <Widget>[
                       const SizedBox(height: 24),
                       Text(
-                        'signup.welcome'.tr,
+                        'auth.register.welcome'.tr,
                         style: const TextStyle(
                             fontFamily: fontFamily,
                             fontSize: 20,
@@ -159,21 +159,22 @@ class RegisterScreen extends HookWidget {
                       const SizedBox(height: 24),
                       FormInput(
                         name: "email",
-                        label: "signup.field.label.email".tr,
+                        label: "auth.register.field.label.email".tr,
                         icon: Icons.email_outlined,
-                        placeholder: "signup.field.placeholder.email".tr,
+                        placeholder: "auth.register.field.placeholder.email".tr,
                         validator:
                             ValidationBuilder().required().email().build(),
                       ),
                       const SizedBox(height: 24),
                       FormInput(
                           name: "password",
-                          label: "signup.field.label.password".tr,
+                          label: "auth.register.field.label.password".tr,
                           isSecrect: true,
                           isError:
                               passwordState.value != "" && isErrorPassword(),
                           icon: Icons.lock_outline,
-                          placeholder: "signup.field.placeholder.password".tr,
+                          placeholder:
+                              "auth.register.field.placeholder.password".tr,
                           validator: ValidationBuilder().required('').build()),
                       const SizedBox(height: 10),
                       Column(
@@ -186,7 +187,8 @@ class RegisterScreen extends HookWidget {
                                       ? Colors.green
                                       : primaryColor),
                               const SizedBox(width: 10),
-                              Text('singup.field.validation.password1'.tr)
+                              Text(
+                                  'auth.register.field.validation.password1'.tr)
                             ],
                           ),
                           const SizedBox(height: 10),
@@ -198,7 +200,8 @@ class RegisterScreen extends HookWidget {
                                       ? Colors.green
                                       : primaryColor),
                               const SizedBox(width: 10),
-                              Text('singup.field.validation.password2'.tr)
+                              Text(
+                                  'auth.register.field.validation.password2'.tr)
                             ],
                           ),
                           const SizedBox(height: 10),
@@ -210,7 +213,8 @@ class RegisterScreen extends HookWidget {
                                       ? Colors.green
                                       : primaryColor),
                               const SizedBox(width: 10),
-                              Text('singup.field.validation.password3'.tr)
+                              Text(
+                                  'auth.register.field.validation.password3'.tr)
                             ],
                           ),
                           const SizedBox(height: 10),
@@ -222,7 +226,8 @@ class RegisterScreen extends HookWidget {
                                       ? Colors.green
                                       : primaryColor),
                               const SizedBox(width: 10),
-                              Text('singup.field.validation.password4'.tr)
+                              Text(
+                                  'auth.register.field.validation.password4'.tr)
                             ],
                           ),
                         ],
@@ -230,18 +235,19 @@ class RegisterScreen extends HookWidget {
                       const SizedBox(height: 24),
                       FormInput(
                         name: "fullName",
-                        label: "signup.field.label.fullName".tr,
+                        label: "auth.register.field.label.fullName".tr,
                         icon: Icons.account_circle_outlined,
-                        placeholder: "signup.field.placeholder.fullName".tr,
+                        placeholder:
+                            "auth.register.field.placeholder.fullName".tr,
                         validator: ValidationBuilder().build(),
                         textInputAction: TextInputAction.done,
                       ),
                       const SizedBox(height: 24),
                       EButton(
-                        label: 'signup.continue'.tr,
+                        label: 'auth.register.continue'.tr,
                         variant: ButtonVariant.primary,
                         onPressed: () {
-                          doSignup(context);
+                          doRegister(context);
                         },
                       ),
                       SizedBox(

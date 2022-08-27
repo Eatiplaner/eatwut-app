@@ -116,7 +116,7 @@ class _LoginScreen extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 24),
                         Text(
-                          'login.welcomeBack'.tr,
+                          'auth.login.welcomeBack'.tr,
                           style: const TextStyle(
                               fontFamily: fontFamily,
                               fontSize: 20,
@@ -126,7 +126,7 @@ class _LoginScreen extends State<LoginScreen> {
                         ETextfield(
                           value: userEmailName,
                           icon: Icons.account_circle_outlined,
-                          placeholder: 'login.username.placeholder'.tr,
+                          placeholder: 'auth.login.username.placeholder'.tr,
                           isError: isUsernameError,
                           onChange: (value) {
                             setState(() {
@@ -141,7 +141,7 @@ class _LoginScreen extends State<LoginScreen> {
                           isError: isPasswordError,
                           icon: Icons.lock_outline,
                           isSecret: true,
-                          placeholder: 'login.password.placeholder'.tr,
+                          placeholder: 'auth.login.password.placeholder'.tr,
                           onChange: (value) {
                             setState(() {
                               isPasswordError = !value.isNotEmpty;
@@ -153,7 +153,7 @@ class _LoginScreen extends State<LoginScreen> {
                         const SizedBox(height: 14),
                         TextButton(
                           onPressed: () {},
-                          child: Text('login.forgotPassword'.tr,
+                          child: Text('auth.login.forgotPassword'.tr,
                               style: const TextStyle(
                                   fontSize: 14,
                                   color: primaryColor,
@@ -161,7 +161,7 @@ class _LoginScreen extends State<LoginScreen> {
                         ),
                         EButton(
                           disabled: isLoading,
-                          label: 'login.continue'.tr,
+                          label: 'auth.login.continue'.tr,
                           variant: ButtonVariant.primary,
                           onPressed: () {
                             doLogin(context);
