@@ -3,6 +3,7 @@ get messages => {
 
       // common
       'common.tap_anywhere_to_exist': 'Tap anywhere to exist',
+      'common.return_to_login_screen': 'Return to Log in screen',
 
       //auth
       'auth.bottom.text.1': 'By logging in or registering, you agree to our ',
@@ -51,5 +52,7 @@ get messages => {
 
       // mail
       'mail.confirmation_email.successfully_message':
-          'You have updated your email successfully!'
+          'You have updated your email successfully!',
+      'mail.reset_password.successfully_message':
+          'You have updated password successfully!'
     };

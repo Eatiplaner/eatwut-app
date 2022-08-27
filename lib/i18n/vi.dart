@@ -3,6 +3,7 @@ get messages => {
 
       // common
       'common.tap_anywhere_to_exist': 'Chạm bất kì để thoát',
+      'common.return_to_login_screen': 'Trở về màn hình đăng nhập',
 
       //auth
       'auth.bottom.text.1':
@@ -50,5 +51,7 @@ get messages => {
 
       // mail
       'mail.confirmation_email.successfully_message':
-          'Bạn đã cập nhập email thành công!'
+          'Bạn đã cập nhập email thành công!',
+      'mail.reset_password.successfully_message':
+          'Bạn đã cập nhập mật khẩu thành công!',
     };

@@ -3,6 +3,7 @@ import 'package:eatiplan_mobile/screens/auth/main.dart';
 import 'package:eatiplan_mobile/screens/auth/register/main.dart';
 import 'package:eatiplan_mobile/screens/home/main.dart';
 import 'package:eatiplan_mobile/screens/mail/confirmation_email.dart';
+import 'package:eatiplan_mobile/screens/mail/reset_password_success.dart';
 import 'package:eatiplan_mobile/screens/splash/main.dart';
 import 'package:eatiplan_mobile/shared/storybook/main.dart';
 import 'package:get/route_manager.dart';
@@ -54,6 +55,12 @@ appRoutes() => [
       GetPage(
         name: '/confirmation-email',
         page: () => const ConfirmationEmailScreen(),
+        transition: Transition.fadeIn,
+        transitionDuration: const Duration(milliseconds: 300),
+      ),
+      GetPage(
+        name: '/reset-password-success',
+        page: () => const ResetPasswordSuccessScreen(),
         transition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 300),
       ),
