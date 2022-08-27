@@ -4,6 +4,9 @@ get messages => {
       // common
       'common.tap_anywhere_to_exist': 'Chạm bất kì để thoát',
       'common.return_to_login_screen': 'Trở về màn hình đăng nhập',
+      'common.continue': 'Tiếp tục',
+      'common.from': 'từ',
+      'common.app_name': 'Eatwut',
 
       //auth
       'auth.bottom.text.1':
@@ -11,14 +14,15 @@ get messages => {
       'auth.bottom.text.2': 'Điều khoản người dùng',
       'auth.bottom.text.3': ' và ',
       'auth.bottom.text.4': ' chính sách về quyền riêng tư ',
+
       //Login
       'auth.login.title': 'Đăng nhập',
-      'auth.login.continue': 'Tiếp tục',
       'auth.login.guest': 'Tiếp tục với khách',
       'auth.login.welcomeBack': 'Chào mừng trở lại !',
       'auth.login.username.placeholder': 'Tên đăng nhập hoặc Email',
       'auth.login.password.placeholder': 'Mật khẩu',
       'auth.login.forgotPassword': 'Quên mật khẩu?',
+
       //Signup
       'auth.register.title': 'Đăng ký',
       'auth.register.welcome': 'Rất vui được gặp bạn',
@@ -40,7 +44,17 @@ get messages => {
       'auth.register.field.label.fullName': 'Tôi có thể gọi bạn là?',
       'auth.register.field.placeholder.fullName': 'Tên của bạn',
 
-      'auth.register.continue': 'Tiếp tục',
+      // Forgot password
+      'auth.forgot_password.title': 'Quên mật khẩu',
+      'auth.forgot_password.email.placeholder': 'Email của bạn',
+      'auth.forgot_password.go_to_your_mailbox': 'Đi tới hồm thư của bạn',
+      'auth.forgot_password.resend_email': 'Gửi lại Email',
+
+      'auth.forgot_password.notify_sent_email.1': 'Chúng tôi đã gửi link tới',
+      'auth.forgot_password.notify_sent_email.2':
+          'để sửa đổi mật khẩu. Nếu bạn không tìm thấy',
+      'auth.forgot_password.notify_sent_email.3': 'Email sửa đổi mật khẩu',
+      'auth.forgot_password.notify_sent_email.4': 'làm ơn nhấn',
 
       //validation common
       'validate.existedEmail': 'Email này đã được sử dụng hãy thử lại',
@@ -54,8 +68,11 @@ get messages => {
           'Tên đăng nhập/Email và Mật khẩu không thể để trống',
 
       // mail
-      'mail.confirmation_email.successfully_message':
+      'mail.activation_account.successfully_message':
           'Bạn đã cập nhập email thành công!',
+      'mail.reset_password.title': 'Thay đổi mật khẩu',
+      "mail.reset_password.field.label.password": 'Mật khẩu mới của bạn',
+      "mail.reset_password.field.placeholder.password": 'Mật khẩu mới của bạn',
       'mail.reset_password.successfully_message':
           'Bạn đã cập nhập mật khẩu thành công!',
     };

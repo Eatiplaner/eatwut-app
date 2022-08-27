@@ -3,14 +3,14 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ConfirmationEmailScreen extends StatefulWidget {
-  const ConfirmationEmailScreen({super.key});
+class MailActivationAccountScreen extends StatefulWidget {
+  const MailActivationAccountScreen({super.key});
 
   @override
-  createState() => _ConfirmationEmailScreen();
+  createState() => _MailActivationAccountScreen();
 }
 
-class _ConfirmationEmailScreen extends State<ConfirmationEmailScreen> {
+class _MailActivationAccountScreen extends State<MailActivationAccountScreen> {
   String animation = 'success';
   bool _clickable = false;
 
@@ -29,7 +29,7 @@ class _ConfirmationEmailScreen extends State<ConfirmationEmailScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('mail.confirmation_email.successfully_message'.tr,
+              Text('mail.activation_account.successfully_message'.tr,
                   style: const TextStyle(
                       fontSize: 15,
                       color: primaryColor,

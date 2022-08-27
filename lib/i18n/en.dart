@@ -4,21 +4,24 @@ get messages => {
       // common
       'common.tap_anywhere_to_exist': 'Tap anywhere to exist',
       'common.return_to_login_screen': 'Return to Log in screen',
+      'common.from': 'from',
+      'common.continue': 'Tiếp tục',
 
       //auth
       'auth.bottom.text.1': 'By logging in or registering, you agree to our ',
       'auth.bottom.text.2': 'Terms of Use',
       'auth.bottom.text.3': ' and ',
       'auth.bottom.text.4': ' Privacy policy ',
+
       //Login
       'auth.login.title': 'Login',
-      'auth.login.continue': 'Continue',
       'auth.login.guest': 'Continue as Guest',
       'auth.login.welcomeBack': 'Welcome back !',
       'auth.login.username.placeholder': 'Username or Email',
       'auth.login.password.placeholder': 'Password',
       'auth.login.forgotPassword': 'Forgot password?',
-      //Signup
+
+      //Register
       'auth.register.title': 'Signup',
       'auth.register.welcome': 'Nice to meet you',
 
@@ -39,7 +42,17 @@ get messages => {
       'auth.register.field.label.fullName': 'What should we call you?',
       'auth.register.field.placeholder.fullName': 'Your fullname',
 
-      'auth.register.continue': 'Continue',
+      // Forgot password
+      'auth.forgot_password.title': 'Forgot Password',
+      'auth.forgot_password.email.placeholder': 'Your email',
+      'auth.forgot_password.go_to_your_mailbox': 'Go to your mailbox',
+      'auth.forgot_password.resend_email': 'Resend Email',
+
+      'auth.forgot_password.notify_sent_email.1': 'We have sent a link to',
+      'auth.forgot_password.notify_sent_email.2':
+          'to reset your password. If you cannot find',
+      'auth.forgot_password.notify_sent_email.3': 'Reset Password Email',
+      'auth.forgot_password.notify_sent_email.4': 'please select',
 
       //validation common
       'validate.existedEmail': 'The email has been used, please try again',
@@ -53,8 +66,11 @@ get messages => {
           'Username/Email and Password cannot be blank',
 
       // mail
-      'mail.confirmation_email.successfully_message':
+      'mail.activation_account.successfully_message':
           'You have updated your email successfully!',
+      'mail.reset_password.title': 'Reset Password',
+      "mail.reset_password.field.label.password": 'Your new password',
+      "mail.reset_password.field.placeholder.password": 'Your new password',
       'mail.reset_password.successfully_message':
           'You have updated password successfully!'
     };

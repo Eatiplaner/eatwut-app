@@ -176,7 +176,7 @@ class RegisterScreen extends HookWidget {
                           placeholder:
                               "auth.register.field.placeholder.password".tr,
                           validator: ValidationBuilder().required('').build()),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 14),
                       Column(
                         children: [
                           Row(
@@ -244,7 +244,7 @@ class RegisterScreen extends HookWidget {
                       ),
                       const SizedBox(height: 24),
                       EButton(
-                        label: 'auth.register.continue'.tr,
+                        label: 'common.continue'.tr,
                         variant: ButtonVariant.primary,
                         onPressed: () {
                           doRegister(context);

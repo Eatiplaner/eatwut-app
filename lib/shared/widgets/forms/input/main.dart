@@ -38,7 +38,6 @@ class FormInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return FormBuilderField<String?>(
       name: name,
-      onChanged: (val) => debugPrint(val.toString()),
       builder: (FormFieldState field) {
         return CupertinoFormRow(
           padding: const EdgeInsets.all(0),
