@@ -51,6 +51,7 @@ class _ResetPasswordSuccessScreen extends State<ResetPasswordSuccessScreen> {
                               },
                             )
                           : SizedBox(
+                              width: 0,
                               child: ButtonTheme(
                                   child: MaterialButton(
                                       height: 56, onPressed: () {})))

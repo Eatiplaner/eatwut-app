@@ -111,7 +111,7 @@ class _LoginScreen extends State<LoginScreen> {
                           height: 40,
                           width: 40,
                           onPressed: () {
-                            Get.back();
+                            Get.toNamed('/auth');
                           },
                         ),
                         const SizedBox(height: 24),
