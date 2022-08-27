@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:eatiplan_mobile/config/routes.dart';
+import 'package:eatiplan_mobile/routes/main.dart';
 import 'package:eatiplan_mobile/config/theme.dart';
 import 'package:eatiplan_mobile/i18n/main.dart';
 import 'package:eatiplan_mobile/i18n/validation.dart';
