@@ -50,6 +50,7 @@ dependencies:
   flutter_secure_storage: ^5.0.2
   flutter_launcher_icons: ^0.9.3
   flutter_hooks: ^0.18.5+1
+  flare_flutter: ^3.0.2
 
 dev_dependencies:
   flutter_test:
@@ -65,7 +66,6 @@ flutter_icons:
   android: true
   ios: true
   image_path: "assets/icons/app.png"
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -85,6 +85,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/icons/app.png
+    - assets/animations/success.flr
     - assets/images/app.png
     - assets/images/app-circle.png
 

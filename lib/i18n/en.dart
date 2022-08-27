@@ -1,5 +1,9 @@
 get messages => {
       'welcome': 'Welcome @username to Eatiplaner',
+
+      // common
+      'common.tap_anywhere_to_exist': 'Tap anywhere to exist',
+
       //auth
       'auth.bottom.text.1': 'By logging in or registering, you agree to our ',
       'auth.bottom.text.2': 'Terms of Use',
@@ -43,5 +47,9 @@ get messages => {
 
       //validation auth
       'validate.auth.user_email_can_not_be_blank':
-          'Username/Email and Password cannot be blank'
+          'Username/Email and Password cannot be blank',
+
+      // mail
+      'mail.confirmation_email.successfully_message':
+          'You have updated your email successfully!'
     };

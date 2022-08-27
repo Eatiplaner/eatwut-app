@@ -1,5 +1,9 @@
 get messages => {
       'welcome': 'Xin Chào @username tới với Eatiplaner',
+
+      // common
+      'common.tap_anywhere_to_exist': 'Chạm bất kì để thoát',
+
       //auth
       'auth.bottom.text.1':
           'Khi bạn đăng nhập hoặc đăng ký đồng nghĩa là bạn đã chấp nhận ',
@@ -42,5 +46,9 @@ get messages => {
 
       //validation auth
       'validate.auth.user_email_can_not_be_blank':
-          'Tên đăng nhập/Email và Mật khẩu không thể để trống'
+          'Tên đăng nhập/Email và Mật khẩu không thể để trống',
+
+      // mail
+      'mail.confirmation_email.successfully_message':
+          'Bạn đã cập nhập email thành công!'
     };
