@@ -13,23 +13,24 @@ class SettingScreen extends HookWidget {
         for (var setting in settingConfig)
           Container(
             margin: const EdgeInsets.only(bottom: 26),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(setting['icon']),
-                const SizedBox(width: 5),
-                TextButton(
-                    onPressed: () {
-                      Get.toNamed(setting['route']);
-                    },
-                    child: Text(setting['title'],
+            child: MaterialButton(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                onPressed: () {
+                  Get.toNamed(setting.route);
+                },
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(setting.icon),
+                    const SizedBox(width: 5),
+                    Text(setting.title.tr,
                         style: const TextStyle(
                             fontSize: 14,
                             color: primaryColor,
                             fontFamily: fontFamily,
-                            fontWeight: FontWeight.w500))),
-              ],
-            ),
+                            fontWeight: FontWeight.w500)),
+                  ],
+                )),
           ),
       ],
     );
@@ -48,23 +49,24 @@ class SettingScreen extends HookWidget {
             title: 'home.setting.title',
           ),
           settingList(),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Icon(Icons.logout_outlined, color: Colors.red),
-              const SizedBox(width: 5),
-              TextButton(
-                  onPressed: () {
-                    // TODO: logout integration
-                  },
-                  child: Text('home.setting.logout'.tr,
+          MaterialButton(
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+              onPressed: () {
+                // TODO: logout integration
+              },
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Icon(Icons.logout_outlined, color: Colors.red),
+                  const SizedBox(width: 5),
+                  Text('home.setting.logout'.tr,
                       style: const TextStyle(
                           fontSize: 14,
                           color: Colors.red,
                           fontFamily: fontFamily,
-                          fontWeight: FontWeight.w500))),
-            ],
-          )
+                          fontWeight: FontWeight.w500)),
+                ],
+              ))
         ],
       ),
     ));
