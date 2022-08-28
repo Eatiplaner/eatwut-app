@@ -69,7 +69,7 @@ get messages => {
 
       // mail
       'mail.activation_account.successfully_message':
-          'Bạn đã cập nhập email thành công!',
+          'Tài khoản của bạn đã được kích hoạt',
       'mail.reset_password.title': 'Thay đổi mật khẩu',
       "mail.reset_password.field.label.password": 'Mật khẩu mới của bạn',
       "mail.reset_password.field.placeholder.password": 'Mật khẩu mới của bạn',
@@ -77,7 +77,7 @@ get messages => {
           'Bạn đã cập nhập mật khẩu thành công!',
 
       // setting
-      'home.setting.title': 'Những thiết lập chung',
+      'home.setting.title': 'Cài đặt',
       'home.setting.profile.title': 'Trang cá nhân',
       'home.setting.notification.title': 'Thiết lập thông báo',
       'home.setting.language.title': 'Ngôn ngữ',

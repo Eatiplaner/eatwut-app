@@ -67,7 +67,7 @@ get messages => {
 
       // mail
       'mail.activation_account.successfully_message':
-          'You have updated your email successfully!',
+          'Your account have been activated',
       'mail.reset_password.title': 'Reset Password',
       "mail.reset_password.field.label.password": 'Your new password',
       "mail.reset_password.field.placeholder.password": 'Your new password',
