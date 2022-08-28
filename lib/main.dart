@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:eatiplan_mobile/provider/navigation.dart';
 import 'package:eatiplan_mobile/routes/main.dart';
 import 'package:eatiplan_mobile/config/theme.dart';
 import 'package:eatiplan_mobile/i18n/main.dart';
@@ -56,6 +57,9 @@ class _MyApp extends State<MyApp> {
       providers: [
         ChangeNotifierProvider(
           create: (ctx) => ThemeProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (ctx) => BottomNavigationBarProvider(),
         ),
       ],
       child: Consumer<ThemeProvider>(

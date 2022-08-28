@@ -53,6 +53,7 @@ class SettingScreen extends HookWidget {
               padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
               onPressed: () {
                 // TODO: logout integration
+                Get.toNamed('/auth');
               },
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
