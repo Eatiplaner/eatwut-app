@@ -45,7 +45,7 @@ class EHeader extends StatelessWidget {
                 Text(
                   title.tr,
                   style: const TextStyle(
-                    fontSize: 15,
+                    fontSize: 24,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
