@@ -1,5 +1,6 @@
 import 'package:eatiplan_mobile/shared/widgets/iconButton/main.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class EHeader extends StatelessWidget {
   const EHeader({
@@ -42,7 +43,7 @@ class EHeader extends StatelessWidget {
                       )
                     : const Text(''),
                 Text(
-                  title,
+                  title.tr,
                   style: const TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w700,

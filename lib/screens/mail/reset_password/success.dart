@@ -47,7 +47,7 @@ class _ResetPasswordSuccessScreen extends State<ResetPasswordSuccessScreen> {
                               label: 'common.return_to_login_screen'.tr,
                               variant: ButtonVariant.primary,
                               onPressed: () {
-                                Get.toNamed('/login');
+                                Get.toNamed('/auth/login');
                               },
                             )
                           : SizedBox(

@@ -72,5 +72,13 @@ get messages => {
       "mail.reset_password.field.label.password": 'Your new password',
       "mail.reset_password.field.placeholder.password": 'Your new password',
       'mail.reset_password.successfully_message':
-          'You have updated password successfully!'
+          'You have updated password successfully!',
+
+      // setting
+      'home.setting.title': 'General Settings',
+      'home.setting.profile.title': 'Profile',
+      'home.setting.notification.title': 'Notification Settings',
+      'home.setting.language.title': 'App Language',
+      'home.setting.version.title': 'App Version',
+      'home.setting.logout': 'Log out',
     };

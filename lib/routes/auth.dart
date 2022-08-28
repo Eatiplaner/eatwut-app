@@ -7,14 +7,6 @@ import 'package:get/route_manager.dart';
 
 authRoutes() => [
       GetPage(
-        name: '/login',
-        page: () => const LoginScreen(),
-        middlewares: [TrackingMiddelware()],
-        transition: Transition.native,
-        popGesture: false,
-        transitionDuration: const Duration(milliseconds: 300),
-      ),
-      GetPage(
         name: '/auth',
         page: () => const AuthScreen(),
         middlewares: [TrackingMiddelware()],
@@ -23,7 +15,15 @@ authRoutes() => [
         transitionDuration: const Duration(milliseconds: 300),
       ),
       GetPage(
-        name: '/register',
+        name: '/auth/login',
+        page: () => const LoginScreen(),
+        middlewares: [TrackingMiddelware()],
+        transition: Transition.native,
+        popGesture: false,
+        transitionDuration: const Duration(milliseconds: 300),
+      ),
+      GetPage(
+        name: '/auth/register',
         page: () => RegisterScreen(),
         middlewares: [TrackingMiddelware()],
         transition: Transition.native,
@@ -31,7 +31,7 @@ authRoutes() => [
         transitionDuration: const Duration(milliseconds: 300),
       ),
       GetPage(
-        name: '/forgot-password',
+        name: '/auth/forgot-password',
         page: () => const ForgotPasswordScreen(),
         transition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 300),

@@ -43,7 +43,7 @@ class _ForgotPasswordScreen extends State<ForgotPasswordScreen> {
                           height: 40,
                           width: 40,
                           onPressed: () {
-                            Get.toNamed('/login');
+                            Get.toNamed('/auth/login');
                           },
                         ),
                         const SizedBox(height: 24),

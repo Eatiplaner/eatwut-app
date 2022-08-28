@@ -153,7 +153,7 @@ class _LoginScreen extends State<LoginScreen> {
                         const SizedBox(height: 14),
                         TextButton(
                           onPressed: () {
-                            Get.toNamed('forgot-password');
+                            Get.toNamed('/auth/forgot-password');
                           },
                           child: Text('auth.login.forgotPassword'.tr,
                               style: const TextStyle(

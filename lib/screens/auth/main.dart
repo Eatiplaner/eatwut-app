@@ -26,7 +26,7 @@ class AuthScreen extends StatelessWidget {
                   label: 'auth.login.title'.tr,
                   variant: ButtonVariant.primary,
                   onPressed: () {
-                    Get.toNamed('/login');
+                    Get.toNamed('/auth/login');
                   },
                 ),
                 const SizedBox(height: 20),
@@ -34,7 +34,7 @@ class AuthScreen extends StatelessWidget {
                   label: 'auth.register.title'.tr,
                   variant: ButtonVariant.secondary,
                   onPressed: () {
-                    Get.toNamed('/register');
+                    Get.toNamed('/auth/register');
                   },
                 ),
                 const SizedBox(height: 20),

@@ -75,4 +75,12 @@ get messages => {
       "mail.reset_password.field.placeholder.password": 'Mật khẩu mới của bạn',
       'mail.reset_password.successfully_message':
           'Bạn đã cập nhập mật khẩu thành công!',
+
+      // setting
+      'home.setting.title': 'Những thiết lập chung',
+      'home.setting.profile.title': 'Trang cá nhân',
+      'home.setting.notification.title': 'Thiết lập thông báo',
+      'home.setting.language.title': 'Ngôn ngữ',
+      'home.setting.version.title': 'Phiên bản',
+      'home.setting.logout': 'Đăng xuất',
     };

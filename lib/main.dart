@@ -12,7 +12,6 @@ import 'package:form_validator/form_validator.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter/foundation.dart';
 
 Future main() async {
   runApp(const MyApp());
@@ -27,48 +26,25 @@ class MyApp extends StatefulWidget {
 
 class _MyApp extends State<MyApp> {
   String token = "";
-  late Timer _timer;
-  int time = 2;
 
   @override
   void initState() {
     super.initState();
     initialToken();
-    startTimer();
-  }
-
-  void startTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (time > 0) {
-        if (kDebugMode) {
-          print(time);
-        }
-        setState(() {
-          time -= 1;
-        });
-      } else {
-        _timer.cancel();
-
-        FlutterNativeSplash.remove();
-        if (token.isNotEmpty) {
-          Get.toNamed('/home');
-        } else {
-          Get.toNamed('/auth');
-        }
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
   }
 
   void initialToken() async {
     final responseToken = await getToken();
+
     setState(() {
       token = responseToken ?? "";
+
+      FlutterNativeSplash.remove();
+      if (token.isNotEmpty) {
+        Get.toNamed('/home');
+      } else {
+        Get.toNamed('/auth');
+      }
     });
   }
 
