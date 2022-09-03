@@ -10,11 +10,13 @@ class EHeader extends StatelessWidget {
     this.navigateIcon,
     this.onPressedIcon,
     this.onPressedAction,
+    this.bottomMargin = 34,
   }) : super(key: key);
 
   final String title;
   final String? actionTitle;
   final Icon? navigateIcon;
+  final double bottomMargin;
 
   final VoidCallback? onPressedAction;
   final VoidCallback? onPressedIcon;
@@ -25,7 +27,7 @@ class EHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: heightContainer,
-        margin: const EdgeInsets.only(bottom: 24),
+        margin: EdgeInsets.only(bottom: bottomMargin, top: 34),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

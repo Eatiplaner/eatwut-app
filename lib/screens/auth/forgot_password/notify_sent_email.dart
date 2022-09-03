@@ -16,7 +16,7 @@ class _NotifySentEmail extends State<NotifySentEmail> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
-          padding: const EdgeInsets.all(42),
+          padding: const EdgeInsets.only(left: 42, right: 42),
           child: Column(children: [
             Flexible(
               flex: 5,

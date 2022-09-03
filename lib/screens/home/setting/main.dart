@@ -12,7 +12,7 @@ class SettingScreen extends HookWidget {
       children: <Widget>[
         for (var setting in settingConfig)
           Container(
-            margin: const EdgeInsets.only(bottom: 26),
+            margin: const EdgeInsets.only(bottom: 10),
             child: MaterialButton(
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                 onPressed: () {
@@ -41,12 +41,13 @@ class SettingScreen extends HookWidget {
     return Scaffold(
         body: Container(
       height: double.infinity,
-      padding: const EdgeInsets.all(42),
+      padding: const EdgeInsets.only(left: 42, right: 42),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const EHeader(
             title: 'home.setting.title',
+            bottomMargin: 24,
           ),
           settingList(),
           MaterialButton(
