@@ -68,6 +68,11 @@ class _MyApp extends State<MyApp> {
             title: 'Eatiplaner App',
             themeMode: themeObject.mode,
             theme: lightTheme,
+            builder: (context, child) => SafeArea(
+                  child: Scaffold(
+                    body: child,
+                  ),
+                ),
             darkTheme: darkTheme,
             initialRoute: '/auth',
             getPages: appRoutes(),
