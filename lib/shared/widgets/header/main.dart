@@ -1,7 +1,6 @@
 import 'package:eatiplan_mobile/shared/widgets/iconButton/main.dart';
 import 'package:flutter/material.dart';
-
-enum ButtonVariant { primary, secondary, danger }
+import 'package:get/get.dart';
 
 class EHeader extends StatelessWidget {
   const EHeader({
@@ -11,11 +10,13 @@ class EHeader extends StatelessWidget {
     this.navigateIcon,
     this.onPressedIcon,
     this.onPressedAction,
+    this.bottomMargin = 34,
   }) : super(key: key);
 
   final String title;
   final String? actionTitle;
   final Icon? navigateIcon;
+  final double bottomMargin;
 
   final VoidCallback? onPressedAction;
   final VoidCallback? onPressedIcon;
@@ -25,8 +26,8 @@ class EHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
         height: heightContainer,
+        margin: EdgeInsets.only(bottom: bottomMargin, top: 34),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -39,14 +40,14 @@ class EHeader extends StatelessWidget {
                           icon: navigateIcon!,
                           height: heightContainer,
                           width: heightContainer,
-                          onPressed: onPressedAction,
+                          onPressed: onPressedIcon,
                         ),
                       )
                     : const Text(''),
                 Text(
-                  title,
+                  title.tr,
                   style: const TextStyle(
-                    fontSize: 15,
+                    fontSize: 24,
                     fontWeight: FontWeight.w700,
                   ),
                 ),

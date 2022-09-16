@@ -23,7 +23,7 @@ class AccountRepository {
     }
   }
 
-  Future<bool> singup(AccountModel accountModel) async {
+  Future<bool> signup(AccountModel accountModel) async {
     AccountModel signupResource = await AccountProvider().signup(accountModel);
     if (signupResource.accessToken == "") {
       return false;
