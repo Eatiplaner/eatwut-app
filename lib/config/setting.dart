@@ -14,7 +14,7 @@ class Setting {
 
 List<Setting> get settingConfig => [
       Setting(
-          route: '/profile',
+          route: 'home/settings/profile',
           title: 'home.setting.profile.title',
           icon: Icons.account_circle_outlined),
       Setting(

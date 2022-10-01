@@ -1,6 +1,5 @@
 import 'package:eatiplan_mobile/shared/widgets/iconButton/main.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class EHeader extends StatelessWidget {
   const EHeader({
@@ -13,7 +12,7 @@ class EHeader extends StatelessWidget {
     this.bottomMargin = 34,
   }) : super(key: key);
 
-  final String title;
+  final Text title;
   final String? actionTitle;
   final Icon? navigateIcon;
   final double bottomMargin;
@@ -44,13 +43,7 @@ class EHeader extends StatelessWidget {
                         ),
                       )
                     : const Text(''),
-                Text(
-                  title.tr,
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
+                title,
               ],
             ),
             actionTitle != null

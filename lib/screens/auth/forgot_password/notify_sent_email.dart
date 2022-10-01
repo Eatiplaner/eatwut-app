@@ -26,7 +26,13 @@ class _NotifySentEmail extends State<NotifySentEmail> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         EHeader(
-                            title: '',
+                            title: const Text(
+                              'Title',
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
                             navigateIcon: const Icon(Icons.arrow_back),
                             onPressedIcon: () {
                               Get.back();

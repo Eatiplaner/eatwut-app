@@ -5,8 +5,10 @@ get messages => {
       'common.tap_anywhere_to_exist': 'Tap anywhere to exist',
       'common.return_to_login_screen': 'Return to Log in screen',
       'common.from': 'from',
-      'common.continue': 'Tiếp tục',
-
+      'common.continue': 'Continue',
+      'common.save': 'Save',
+      'common.email': 'Your email',
+      'common.password': 'Password',
       //auth
       'auth.bottom.text.1': 'By logging in or registering, you agree to our ',
       'auth.bottom.text.2': 'Terms of Use',
