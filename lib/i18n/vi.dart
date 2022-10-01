@@ -7,7 +7,9 @@ get messages => {
       'common.continue': 'Tiếp tục',
       'common.from': 'từ',
       'common.app_name': 'Eatwut',
-
+      'common.save': 'Lưu lại',
+      'common.email': 'Email',
+      'common.password': 'Mật khẩu',
       //auth
       'auth.bottom.text.1':
           'Khi bạn đăng nhập hoặc đăng ký đồng nghĩa là bạn đã chấp nhận ',
@@ -83,4 +85,5 @@ get messages => {
       'home.setting.language.title': 'Ngôn ngữ',
       'home.setting.version.title': 'Phiên bản',
       'home.setting.logout': 'Đăng xuất',
+      // Profile
     };

@@ -45,8 +45,14 @@ class SettingScreen extends HookWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const EHeader(
-            title: 'home.setting.title',
+          EHeader(
+            title: Text(
+              'home.setting.title'.tr,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
             bottomMargin: 24,
           ),
           settingList(),

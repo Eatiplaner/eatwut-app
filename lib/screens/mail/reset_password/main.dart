@@ -99,7 +99,7 @@ class MailResetPassworScreen extends HookWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             EHeader(
-                                title: '',
+                                title: const Text(''),
                                 navigateIcon: const Icon(Icons.arrow_back),
                                 onPressedIcon: () {
                                   Get.back();
